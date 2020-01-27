@@ -1,0 +1,1 @@
+ ls images | sed -e 's/\..*$//' > train.txt
