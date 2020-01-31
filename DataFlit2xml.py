@@ -76,13 +76,16 @@ def _main_(args):
         cod_falla = int(Excel.loc[index_path]['Cód. Falla'])
         sev = Excel.loc[index_path]['Severidad']
 
+        #if cod_falla != 1:
+        #    continue
+
         ## Junta las mismas fotos con distintos label EJ :
         # DJI_0021B ---> DJI_0021
         aux = path_Flir.split('/')[-2:]
         if len(aux[1].split('.')[0]) > 8:
             aux[1] = aux[1].split('.')[0][:8] + '.' + aux[1].split('.')[1]
 
-        path_Flir_aux = thermal_path  + '/'.join(aux)
+        path_Flir_aux = thermal_path  + '/'.join(path_Flir.split('/')[-2:])
 
         if not os.path.isfile(path_Flir_aux):
             print ('No existe la imagen', path_Flir_aux)
