@@ -1,0 +1,28 @@
+{
+    "model" : {
+        "backend":      "ssd300",
+        "input":        400,
+        "labels":               ["1"]
+    },
+
+    "train": {
+        "train_image_folder":   "Train&Test_1/images",
+        "train_annot_folder":   "Train&Test_1/anns",
+        "train_image_set_filename": "Train&Test_1/train.txt",
+
+        "train_times":          1,
+        "batch_size":           12,
+        "learning_rate":        1e-4,
+        "nb_epochs":            10,
+        "warmup_epochs":        3,
+	       "saved_weights_name":     "experimento_ssd300_fault_1.h5",
+        "debug":                true
+    },
+
+
+"test": {
+        "test_image_folder":   "Train&Test_1/images",
+        "test_annot_folder":   "Train&Test_1/anns",
+        "test_image_set_filename":   "Train&Test_1/test.txt"
+    }
+}
