@@ -161,7 +161,7 @@ All of weights of this trained model grab from https://drive.google.com/drive/fo
 ### SDD7
 On folder Result_ssd7_panel show code (jupyter notebook), weight and result of this model (mAP 89.8%).
 
-![](Result_ssd_panel/result_ssd7_panel/DJI_0020.jpg)
+![](Result_ssd7_panel/result_ssd7_panel/DJI_0020.jpg)
 
 ![](Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg)
 
@@ -170,12 +170,12 @@ On folder Result_ssd7_panel show code (jupyter notebook), weight and result of t
 On folder Result_ssd300_fault_1 show code (jupyter notebook), weight and result of this model (mAP 79.5%).
 
 
-![](Result_ssd300_fault_1/result_ssd300_fault_1/Mision 11_DJI_0011.jpg)
+![](Result_ssd300_fault_1/result_ssd300_fault_1/Mision_11_DJI_0011.jpg)
 
 
 ### YOLO3
 On folder Result_ssd300_fault_1 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
 
-![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision 11_DJI_0011.jpg)
+![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
 
 ## Diode Fault Detector
