@@ -161,21 +161,24 @@ All of weights of this trained model grab from https://drive.google.com/drive/fo
 ## Panel Detector
 ### SDD7
 On folder Result_ssd7_panel show code (jupyter notebook), weight and result of this model (mAP 89.8%).
+
 .. image:: /Result_ssd_panel/result_ssd7_panel/DJI_0020.jpg
     :width: 200px
     :align: center
-    /Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg
+.. image:: /Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg
     :width: 200px
     :align: center
 ## Soiling Fault Detector
 ### SSD300
 On folder Result_ssd300_fault_1 show code (jupyter notebook), weight and result of this model (mAP 79.5%).
- /Result_ssd300_fault_1/result_ssd300_fault_1/Mision 11_DJI_0011.jpg
+
+.. image:: /Result_ssd300_fault_1/result_ssd300_fault_1/Mision 11_DJI_0011.jpg
     :width: 200px
     :align: center
 ### YOLO3
 On folder Result_ssd300_fault_1 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
- /Result_yolo3_fault_1/result_yolo3_fault_1/Mision 11_DJI_0011.jpg
+
+.. image:: /Result_yolo3_fault_1/result_yolo3_fault_1/Mision 11_DJI_0011.jpg
     :width: 200px
     :align: center
     
