@@ -1,0 +1,7 @@
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "train.py", line 294, in <module>
+    _main_(args)
+  File "train.py", line 170, in _main_
+    with open(config_path) as config_buffer:
+FileNotFoundError: [Errno 2] No such file or directory: 'config_full_yolo_panel.json'

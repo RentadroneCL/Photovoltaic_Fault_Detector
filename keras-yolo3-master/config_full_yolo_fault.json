@@ -1,0 +1,49 @@
+{
+    "model" : {
+        "min_input_size":       448,
+        "max_input_size":       448,
+        "anchors":              [5,7, 10,14, 26,32, 45,119, 54,18, 94,59, 109,183, 200,21, 203,91],
+        "labels":               ["1", "2", "3", "4", "5", "6", "7", "8"],
+	"backend": 		"full_yolo_backend.h5"
+    },
+
+    "train": {
+        "train_image_folder":   "../model-definition/Train&Test_B/images/",
+        "train_annot_folder":   "../model-definition/Train&Test_B/anns/",
+	"cache_name":           "experimento_fault_gpu.pkl",
+
+        "train_times":          1,
+
+        "batch_size":           2,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        10,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0,1",
+
+	"grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+	"tensorboard_dir":      "log_experimento_fault_gpu",
+	"saved_weights_name":   "../model-definition/experimento_yolo3_full_fault.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "../model-definition/Train&Test_B/images/",
+        "valid_annot_folder":   "../model-definition/Train&Test_B/anns/",
+        "cache_name":           "val_fault.pkl",
+
+        "valid_times":          1
+    },
+   "test": {
+        "test_image_folder":   "../model-definition/Train&Test_B/images/",
+        "test_annot_folder":   "../model-definition/Train&Test_B/anns/",
+        "cache_name":          "test_fault.pkl",
+
+        "test_times":          1
+    }
+}

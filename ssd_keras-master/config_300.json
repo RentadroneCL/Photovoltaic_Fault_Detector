@@ -1,0 +1,33 @@
+{
+    "model" : {
+        "backend":      "ssd300",
+        "input":        300,
+        "labels":               ["Gun" ,"Knife", "Razor", "Shuriken"]
+    },
+
+    "train": {
+        "train_image_folder":   "../Experimento_5/Training/images/",
+        "train_annot_folder":   "../Experimento_5/Training/anns/",
+        "train_image_set_filename": "../Experimento_5/Training/train_no_original.txt",
+
+        "train_times":          1,
+        "batch_size":           8,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        3,
+	       "saved_weights_name":     "../Experimento_5/Resultados_ssd/ssd300/experimento_5_ssd300.h5",
+        "debug":                false
+    },
+
+    "valid": {
+        "valid_image_folder":   "../Experimento_5/Training/images/",
+        "valid_annot_folder":   "../Experimento_5/Training/anns/",
+        "valid_image_set_filename": "../Experimento_5/Training/train_no_original.txt",
+        "valid_times":          1
+    },
+"test": {
+        "test_image_folder":   "../Experimento_3/Baggages/Testing_3/images/",
+        "test_annot_folder":   "../Experimento_3/Baggages/Testing_3/anns/",
+        "test_image_set_filename":   "../Experimento_3/Baggages/Testing_3/test.txt"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "model" : {
+        "min_input_size":       448,
+        "max_input_size":       448,
+        "anchors":              [26,32, 45,119, 54,18, 94,59, 109,183, 200,21, 203,91, 210,253, 249,157],
+        "labels":               ["Gun", "Knife", "Razor", "Shuriken"],
+	"backend": 		"full_yolo_backend.h5"
+    },
+
+    "train": {
+        "train_image_folder":   "../Experimento_6/Training/images/",
+        "train_annot_folder":   "../Experimento_6/Training/anns/",
+	"cache_name":           "experimento_6_gpu.pkl",
+
+        "train_times":          1,
+
+        "batch_size":           2,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        10,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0,1",
+
+	"grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+	"tensorboard_dir":      "log_experimento_3_gpu",
+	"saved_weights_name":   "../Experimento_5/Resultados_yolo3/full_yolo/experimento_5_yolo3_full_yolo.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "../Experimento_6/Training/images/",
+        "valid_annot_folder":   "../Experimento_6/Training/anns/",
+        "cache_name":           "val_6.pkl",
+
+        "valid_times":          1
+    },
+   "test": {
+        "test_image_folder":   "../Experimento_3/Baggages/Testing_678/images/",
+        "test_annot_folder":   "../Experimento_3/Baggages/Testing_678/anns/",
+        "cache_name":          "experimento_3_test678.pkl",
+
+        "test_times":          1
+    }
+}
