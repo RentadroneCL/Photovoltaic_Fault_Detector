@@ -6,9 +6,9 @@
     },
 
     "train": {
-        "train_image_folder":   "Train&Test_S/images",
-        "train_annot_folder":   "Train&Test_S/anns",
-        "train_image_set_filename": "Train&Test_S/train.txt",
+        "train_image_folder":   "Train&Test_S/Train/images",
+        "train_annot_folder":   "Train&Test_S/Train/anns",
+        "train_image_set_filename": "Train&Test_S/Train/train.txt",
 
         "train_times":          1,
         "batch_size":           8,
@@ -21,8 +21,8 @@
 
 
 "test": {
-        "test_image_folder":   "Train&Test_S/images",
-        "test_annot_folder":   "Train&Test_S/anns",
-        "test_image_set_filename":   "Train&Test_S/test.txt"
+        "test_image_folder":   "Train&Test_S/Test/images",
+        "test_annot_folder":   "Train&Test_S/Test/anns",
+        "test_image_set_filename":   "Train&Test_S/Test/test.txt"
     }
 }
