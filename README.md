@@ -11,7 +11,7 @@
 - [ ] Model Other Fault  Detection
 
 
-### Dependencies
+## Dependencies
 
 * Python 3.x
 * Numpy
@@ -24,7 +24,15 @@
 
 Grab the pretrained weights of SSD and  YOLO3 from https://drive.google.com/drive/folders/1FuhIJFxuzB9CLuRNwbKWFFsM6Nyweorf?usp=sharing
 
+## Type of Data
+The images used for the design of this model were extracted by air analysis, specifically: FLIR aerial radiometric thermal infrared pictures, taken by UAV (R-JPEG format). Which were converted into .jpg images for the training of these detection models.
+Example FLIR image:
 
+![FLIR](images/example_flir.jpg)
+
+Same image in .jpg format:
+
+![JPG](images/example.jpg)
 
 ## Training
 
