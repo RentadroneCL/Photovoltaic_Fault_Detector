@@ -22,7 +22,7 @@
 
 ## Detection
 
-Grab the pretrained weights of SSD and  YOLO3 from https://drive.google.com/drive/folders/1FuhIJFxuzB9CLuRNwbKWFFsM6Nyweorf?usp=sharing
+Grab the pretrained weights of SSD and  YOLO3 from https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing
 
 ## Type of Data
 The images used for the design of this model were extracted by air analysis, specifically: FLIR aerial radiometric thermal infrared pictures, taken by UAV (R-JPEG format). Which were converted into .jpg images for the training of these detection models.
@@ -164,7 +164,7 @@ The evaluation is integrated into the training process, if you want to do the in
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
 # Result
-All of weights of this trained model grab from https://drive.google.com/drive/folders/1FuhIJFxuzB9CLuRNwbKWFFsM6Nyweorf?usp=sharing
+All of weights of this trained model grab from https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing
 ## Panel Detector
 ### SDD7
 On folder Result_ssd7_panel show code (jupyter notebook), weight and result of this model (mAP 89.8%).
