@@ -76,7 +76,7 @@ def _main_(args):
         cod_falla = int(Excel.loc[index_path]['Cód. Falla'])
         sev = Excel.loc[index_path]['Severidad']
 
-        #if cod_falla != 1:
+        #if cod_falla != 4:
         #    continue
 
         ## Junta las mismas fotos con distintos label EJ :
