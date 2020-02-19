@@ -1,5 +1,5 @@
 import os
-
+import argparse
 
 
 def makedirs(path):
@@ -21,9 +21,9 @@ def _main_(args):
     makedirs(output_path)
 
     print ('Training ssd')
-    os.system('cd ssd_keras-master/ && python train.py -c ../' + config_path.json+ ' > ../' + output_path + '/ssd.output 2> ../' + output_path +'/ssd.err')
+    os.system('cd ssd_keras-master/ && python train.py -c ../' + config_path + ' > ../' + output_path + '/ssd.output 2> ../' + output_path +'/ssd.err')
     print ('Testing ssd')
-    os.system('cd ssd_keras-master/ && python evaluate.py -c ../' + config_path.json+ ' > ../' + output_path + '/ssd_test.output 2> ../' + output_path +'/ssd_test.err')
+    os.system('cd ssd_keras-master/ && python evaluate.py -c ../' + config_path + ' > ../' + output_path + '/ssd_test.output 2> ../' + output_path +'/ssd_test.err')
 
 
 if __name__ == '__main__':

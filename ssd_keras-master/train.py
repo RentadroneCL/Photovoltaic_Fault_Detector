@@ -422,7 +422,7 @@ def _main_(args):
     initial_epoch   = 0
     final_epoch     = config['train']['nb_epochs']
     #final_epoch     = 20
-    steps_per_epoch = 10000
+    steps_per_epoch = 500
 
     history = model.fit_generator(generator=train_generator,
                                   steps_per_epoch=steps_per_epoch,

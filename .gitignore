@@ -13,5 +13,7 @@ result_ssd7_panel_cell/
 Thermal/
 fault_jpg/
 fault_jpg_1/
+keras-yolo3-master/log_experimento_fault_gpu/
+Result_ssd300_fault_4/
 
 *.h5

@@ -28,7 +28,7 @@
         "class_scale":          1,
 
 	"tensorboard_dir":      "log_experimento_fault_gpu",
-	"saved_weights_name":   "../Result_yolo3_fault_4/yolo3_full_fault_4.h5",
+	"saved_weights_name":   "Result_yolo3_fault_4/yolo3_full_fault_4.h5",
         "debug":                true
     },
 

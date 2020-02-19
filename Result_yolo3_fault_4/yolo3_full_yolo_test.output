@@ -1,0 +1,4 @@
+dict_items([(0, (0.6619091605752383, 228.0))])
+228 instances of class 4 with average precision: 0.6619
+mAP using the weighted average of precisions among classes: 0.6619
+mAP: 0.6619
