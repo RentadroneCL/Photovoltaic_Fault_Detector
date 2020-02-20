@@ -108,7 +108,7 @@ The configuration file for YOLO3 is a json file, which looks like this  (example
     }
 }
 ```
-The configuration file for SSD300 is a json file, which looks like this  (example soiling fault ):
+The configuration file for SSD300 is a json file, which looks like this  (example soiling fault ) and .txt with name of images (train.txt):
 ```
 {
     "model" : {
@@ -126,10 +126,15 @@ The configuration file for SSD300 is a json file, which looks like this  (exampl
         "batch_size":           12,
         "learning_rate":        1e-4,
         "warmup_epochs":        3,
+        "nb_epochs":            100,
 	       "saved_weights_name":     "Result_ssd300_fault_1/experimento_ssd300_fault_1.h5",
         "debug":                true
     },
-
+    "valid": {
+            "valid_image_folder":   "../Train&Test_D/Test/images/",
+            "valid_annot_folder":   "../Train&Test_D/Test/anns/",
+            "valid_image_set_filename":   "../Train&Test_D/Test/test.txt"
+        },
 
 "test": {
         "test_image_folder":   "Train&Test_S/Test/images",
