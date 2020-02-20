@@ -200,8 +200,25 @@ On folder Result_yolo3_fault_1 show history train (yolo3_full_yolo.output), weig
 ### YOLO3
 On folder Result_yolo3_fault_4 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
 
-
-![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision_41_DJI_0044.jpg)
-
+![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
 
 
+
+# Contributing
+
+Contributions are welcome and will be fully credited. We accept contributions via Pull Requests on GitHub.
+
+## Pull Request Checklist
+
+Before sending your pull requests, make sure you followed this list.
+
+- Read [contributing guidelines](CONTRIBUTING.md).
+- Read [Code of Conduct](CODE_OF_CONDUCT.md).
+- Check if my changes are consistent with the [guidelines](https://github.com/RentadroneCL/model-definition/blob/master/CONTRIBUTING.md#general-guidelines-and-philosophy-for-contribution).
+- Changes are consistent with the [Coding Style](https://github.com/RentadroneCL/model-definition/blob/master/CONTRIBUTING.md#c-coding-style).
+- Run [Unit Tests](https://github.com/RentadroneCL/model-definition/CONTRIBUTING.md#running-unit-tests).
+
+
+# Example to use trained model
+
+In ['Example_Prediction'](ex_prediction.ipynb) 
