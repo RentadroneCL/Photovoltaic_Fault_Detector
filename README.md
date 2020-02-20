@@ -203,3 +203,5 @@ On folder Result_yolo3_fault_4 show history train (yolo3_full_yolo.output), weig
 
 ![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision_41_DJI_0044.jpg)
 
+
+
