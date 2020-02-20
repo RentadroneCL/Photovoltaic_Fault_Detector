@@ -10,7 +10,7 @@
     "train": {
         "train_image_folder":   "../Train&Test_S/Train/images/",
         "train_annot_folder":   "../Train&Test_S/Train/anns/",
-	"cache_name":           "../Experimento_fault_1/Resultados_yolo3/full_yolo/experimento_fault_1_gpu.pkl",
+	"cache_name":           "../Result_yolo3_fault_1/experimento_fault_1_gpu.pkl",
 
         "train_times":          1,
 
@@ -28,21 +28,21 @@
         "class_scale":          1,
 
 	"tensorboard_dir":      "log_experimento_fault_gpu",
-	"saved_weights_name":   "../Experimento_fault_1/Resultados_yolo3/full_yolo/experimento_yolo3_full_fault.h5",
+	"saved_weights_name":   "../Result_yolo3_fault_1/experimento_yolo3_full_fault.h5",
         "debug":                true
     },
 
     "valid": {
         "valid_image_folder":   "../Train&Test_S/Test/images/",
         "valid_annot_folder":   "../Train&Test_S/Test/anns/",
-        "cache_name":           "../Experimento_fault_1/Resultados_yolo3/full_yolo/val_fault_1.pkl",
+        "cache_name":           "../Result_yolo3_fault_1/val_fault_1.pkl",
 
         "valid_times":          1
     },
    "test": {
         "test_image_folder":   "../Train&Test_S/Test/images/",
         "test_annot_folder":   "../Train&Test_S/Test/anns/",
-        "cache_name":          "../Experimento_fault_1/Resultados_yolo3/full_yolo/test_fault_1.pkl",
+        "cache_name":          "../Result_yolo3_fault_1/test_fault_1.pkl",
 
         "test_times":          1
     }
