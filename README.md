@@ -6,8 +6,8 @@
 ## To do list:
 - [x] Import model detection (SSD & YOLO3)
 - [x] Model Panel Detection
-- [ ] Model Soiling Fault Detection
-- [ ] Model Diode Fault  Detection
+- [x] Model Soiling Fault Detection
+- [x] Model Diode Fault  Detection
 - [ ] Model Other Fault  Detection
 
 
@@ -20,7 +20,10 @@
 * OpenCV
 * Beautiful Soup 4.x
 
-## Detection
+## Model Detection
+The models used for detection are SSD [SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325) and YOLOv3 [YOLOv3: An Incremental Improvement] (https://arxiv.org/abs/1804.02767), they are imported from the following repositories:
+* [SSD_Keras](https://github.com/pierluigiferrari/ssd_keras#how-to-fine-tune-one-of-the-trained-models-on-your-own-dataset)
+* [YOLOv3_Keras](https://github.com/experiencor/keras-yolo3)
 
 Grab the pretrained weights of SSD and  YOLO3 from https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing
 
@@ -187,8 +190,16 @@ On folder Result_ssd300_fault_1 show code (jupyter notebook), weight and result 
 
 
 ### YOLO3
-On folder Result_ssd300_fault_1 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+On folder Result_yolo3_fault_1 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+
 
 ![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
 
+
 ## Diode Fault Detector
+### YOLO3
+On folder Result_yolo3_fault_4 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+
+
+![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision_41_DJI_0044.jpg)
+
