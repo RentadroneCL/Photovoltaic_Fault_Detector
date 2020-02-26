@@ -25,7 +25,7 @@ The models used for detection are SSD [SSD: Single Shot MultiBox Detector](https
 * [SSD_Keras](https://github.com/pierluigiferrari/ssd_keras#how-to-fine-tune-one-of-the-trained-models-on-your-own-dataset)
 * [YOLOv3_Keras](https://github.com/experiencor/keras-yolo3)
 
-Grab the pretrained weights of SSD and  YOLO3 from https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing
+Grab the pretrained weights of SSD and  YOLO3 from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
 
 ## Type of Data
 The images used for the design of this model were extracted by air analysis, specifically: FLIR aerial radiometric thermal infrared pictures, taken by UAV (R-JPEG format). Which were converted into .jpg images for the training of these detection models.
@@ -172,10 +172,10 @@ The evaluation is integrated into the training process, if you want to do the in
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
 # Result
-All of weights of this trained model grab from https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing
+All of weights of this trained model grab from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
 ## Panel Detector
 ### SDD7
-On folder Result_ssd7_panel show code (jupyter notebook), weight and result of this model (mAP 89.8%).
+On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), weight and result of this model (mAP 89.8%).
 
 ![](Result_ssd7_panel/result_ssd7_panel/DJI_0020.jpg)
 
@@ -183,14 +183,14 @@ On folder Result_ssd7_panel show code (jupyter notebook), weight and result of t
 
 ## Soiling Fault Detector
 ### SSD300
-On folder Result_ssd300_fault_1 show code (jupyter notebook), weight and result of this model (mAP 79.5%).
+On folder [Result ssd300 fault 1](Result_ssd300_fault_1/) show code (jupyter notebook), weight and result of this model (mAP 79.5%).
 
 
 ![](Result_ssd300_fault_1/result_ssd300_fault_1/Mision_11_DJI_0011.jpg)
 
 
 ### YOLO3
-On folder Result_yolo3_fault_1 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+On folder [Result yolo3 fault 1](Result_yolo3_fault_1/) show [history train](Result_yolo3_fault_1/yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
 
 
 ![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
@@ -198,7 +198,7 @@ On folder Result_yolo3_fault_1 show history train (yolo3_full_yolo.output), weig
 
 ## Diode Fault Detector
 ### YOLO3
-On folder Result_yolo3_fault_4 show history train (yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Result_yolo3_fault_4/yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
 
 ![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
 
@@ -221,4 +221,4 @@ Before sending your pull requests, make sure you followed this list.
 
 # Example to use trained model
 
-In ['Example_Prediction'](ex_prediction.ipynb) 
+In ['Example_Prediction'](Example_prediction.ipynb) 

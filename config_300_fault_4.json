@@ -6,29 +6,29 @@
     },
 
     "train": {
-        "train_image_folder":   "../Train&Test_D/Train/images",
-        "train_annot_folder":   "../Train&Test_D/Train/anns",
-        "train_image_set_filename": "../Train&Test_D/Train/train.txt",
+        "train_image_folder":   "Train&Test_D/Train/images",
+        "train_annot_folder":   "Train&Test_D/Train/anns",
+        "train_image_set_filename": "Train&Test_D/Train/train.txt",
 
         "train_times":          1,
         "batch_size":           12,
         "learning_rate":        1e-4,
         "warmup_epochs":        3,
-	
+
         "nb_epochs":            100,
-	       "saved_weights_name":     "../Result_ssd300_fault_4/ssd300_fault_4.h5",
+	       "saved_weights_name":     "Result_ssd300_fault_4/ssd300_fault_4.h5",
         "debug":                false
     },
 "valid": {
-        "valid_image_folder":   "../Train&Test_D/Test/images/",
-        "valid_annot_folder":   "../Train&Test_D/Test/anns/",
-        "valid_image_set_filename":   "../Train&Test_D/Test/test.txt"
+        "valid_image_folder":   "Train&Test_D/Test/images/",
+        "valid_annot_folder":   "Train&Test_D/Test/anns/",
+        "valid_image_set_filename":   "Train&Test_D/Test/test.txt"
     },
 
 
 "test": {
-        "test_image_folder":   "../Train&Test_D/Test/images",
-        "test_annot_folder":   "../Train&Test_D/Test/anns",
-        "test_image_set_filename":   "../Train&Test_D/Test/test.txt"
+        "test_image_folder":   "Train&Test_D/Test/images",
+        "test_annot_folder":   "Train&Test_D/Test/anns",
+        "test_image_set_filename":   "Train&Test_D/Test/test.txt"
     }
 }

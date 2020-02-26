@@ -21,9 +21,9 @@ def _main_(args):
     makedirs(output_path)
 
     print ('Training ssd')
-    os.system('cd ssd_keras-master/ && python train.py -c ../' + config_path + ' > ../' + output_path + '/ssd.output 2> ../' + output_path +'/ssd.err')
+    os.system('python ssd_keras-master/train.py -c ' + config_path + ' > ' + output_path + '/ssd.output 2> ' + output_path +'/ssd.err')
     print ('Testing ssd')
-    os.system('cd ssd_keras-master/ && python evaluate.py -c ../' + config_path + ' > ../' + output_path + '/ssd_test.output 2> ../' + output_path +'/ssd_test.err')
+    os.system('python ssd_keras-master/evaluate.py -c ' + config_path + ' > ' + output_path + '/ssd_test.output 2> ' + output_path +'/ssd_test.err')
 
 
 if __name__ == '__main__':
@@ -32,4 +32,3 @@ if __name__ == '__main__':
     argparser.add_argument('-o', '--output', help='path to save the experiment')
     args = argparser.parse_args()
     _main_(args)
-
