@@ -9,7 +9,7 @@
 - [x] Model Soiling Fault Detection
 - [x] Model Diode Fault  Detection
 - [ ] Model Other Fault  Detection
-- [ ] Example use Trained Model
+- [x] Example use Trained Model
 
 
 ## Dependencies
