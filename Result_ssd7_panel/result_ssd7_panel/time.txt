@@ -1,1 +1,1 @@
-Tiempo promedio:0.10402042865753174
+Tiempo promedio:0.13215500116348267

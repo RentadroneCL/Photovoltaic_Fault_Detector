@@ -5,10 +5,12 @@
 
 ## To do list:
 - [x] Import model detection (SSD & YOLO3)
-- [x] Model Panel Detection
-- [x] Model Soiling Fault Detection
-- [x] Model Diode Fault  Detection
+- [x] Model Panel Detection (SSD7)
+- [ ] Model Panel Detection (YOLO3)
+- [x] Model Soiling Fault Detection (YOLO3)
+- [x] Model Diode Fault  Detection (YOLO3)
 - [ ] Model Other Fault  Detection
+- [ ] Model Fault Panel Disconnect
 
 
 ## Dependencies
