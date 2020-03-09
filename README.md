@@ -11,6 +11,8 @@
 - [x] Model Diode Fault  Detection (YOLO3)
 - [ ] Model Other Fault  Detection
 - [ ] Model Fault Panel Disconnect
+- [x] Example use Trained Model
+
 
 
 ## Dependencies
@@ -223,4 +225,4 @@ Before sending your pull requests, make sure you followed this list.
 
 # Example to use trained model
 
-In ['Example_Prediction'](Example_prediction.ipynb) 
+In ['Example_Prediction'](Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
