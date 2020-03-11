@@ -1,0 +1,6 @@
+result_otros/
+log_experimento_panel_gpu/
+
+*.jpg
+*.h5
+*.pkl

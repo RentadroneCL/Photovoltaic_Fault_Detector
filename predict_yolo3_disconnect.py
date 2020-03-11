@@ -130,8 +130,10 @@ def _main_(args):
             print('Elapsed time = {}'.format(time.time() - start))
             times.append(time.time() - start)
             # draw bounding boxes on the image using labels
+            for box in boxes:
+                
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh)
-
+            
             # write the image with bounding boxes to file
             cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 

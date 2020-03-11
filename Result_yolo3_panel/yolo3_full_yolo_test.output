@@ -1,0 +1,4 @@
+dict_items([(0, (0.8603589799894383, 118.0))])
+118 instances of class panel with average precision: 0.8604
+mAP using the weighted average of precisions among classes: 0.8604
+mAP: 0.8604
