@@ -1,0 +1,22 @@
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/dl-desktop/anaconda3/envs/tf_gpu/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-03-10 23:14:56.951487: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-03-10 23:14:56.973302: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3199460000 Hz
+2020-03-10 23:14:56.975039: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x564a6b9b61c0 executing computations on platform Host. Devices:
+2020-03-10 23:14:56.975089: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2020-03-10 23:14:57.074882: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-03-10 23:14:57.076194: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x564a6b2a3d30 executing computations on platform CUDA. Devices:
+2020-03-10 23:14:57.076252: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1060 6GB, Compute Capability 6.1
+2020-03-10 23:14:57.076780: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.7845
+pciBusID: 0000:22:00.0
+totalMemory: 5.93GiB freeMemory: 5.45GiB
+2020-03-10 23:14:57.076809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2020-03-10 23:14:57.078242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-03-10 23:14:57.078269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2020-03-10 23:14:57.078282: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2020-03-10 23:14:57.078583: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5281 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:22:00.0, compute capability: 6.1)
+/home/dl-desktop/anaconda3/envs/tf_gpu/lib/python3.6/site-packages/keras/engine/saving.py:292: UserWarning: No training configuration found in save file: the model was *not* compiled. Compile it manually.
+  warnings.warn('No training configuration found in save file: '
