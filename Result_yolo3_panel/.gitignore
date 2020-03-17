@@ -1,5 +1,9 @@
 result_otros/
 log_experimento_panel_gpu/
+Result_Prueba/
+Prueba/
+Otros_2/
+Otros/
 
 *.jpg
 *.h5

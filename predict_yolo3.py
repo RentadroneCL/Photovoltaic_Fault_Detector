@@ -16,7 +16,7 @@ import numpy as np
 
 
 def _main_(args):
-    
+
     config_path  = args.conf
     input_path   = args.input
     output_path  = args.output
@@ -30,7 +30,7 @@ def _main_(args):
     #   Set some parameter
     ###############################
     net_h, net_w = 416, 416 # a multiple of 32, the smaller the faster
-    obj_thresh, nms_thresh = 0.8, 0.3
+    obj_thresh, nms_thresh = 0.5, 0.3
 
     ###############################
     #   Load the model
