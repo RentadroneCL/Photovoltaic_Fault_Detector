@@ -10,75 +10,75 @@ sys.path += [os.path.abspath('keras-yolo3-master')]
 
 from utils.utils import get_yolo_boxes, makedirs
 from utils.bbox import draw_boxes
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from tqdm import tqdm
 import numpy as np
 
 
 def disconnect(image, boxes, obj_thresh = 0.5, area_min = 400, merge = 0, z_thresh = 1.8):
-    
+
     new_boxes = []
     for num, box in enumerate(boxes):
-       
+
         xmin = box.xmin + merge
         xmax = box.xmax - merge
         ymin = box.ymin + merge
         ymax = box.ymax - merge
-        
+
         if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.get_score() > obj_thresh:
-            
+
             area = (ymax - ymin)*(xmax - xmin)
             z_score = np.sum(image[np.int(ymin):np.int(ymax), np.int(xmin):np.int(xmax)]) / area
-            
+
             if area > area_min:
-                
+
                 box.z_score = z_score
                 new_boxes.append(box)
                 #boxes_area_score[str(num)] = {'xmin': xmin, 'xmax': xmax, 'ymin': ymin, 'ymax': ymax, 'score' : score, 'area' : area}
-       
+
     mean_score = np.mean([box.z_score for box in new_boxes])
     sd_score  = np.std([box.z_score for box in new_boxes])
-    
+
     new_boxes = [box for box in new_boxes if (box.z_score - mean_score)/sd_score > z_thresh]
-    
+
     for box in new_boxes:
-        
+
         z_score = (box.z_score - mean_score)/sd_score
         box.classes[0] = min((z_score-z_thresh)*0.5/(3-z_thresh)+ 0.5, 1)
-        
+
     return new_boxes
-    
+
 
 def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0,  z_thresh = 1.8):
-        
+
     new_boxes = []
     for num, box in enumerate(boxes):
-       
+
         xmin = box.xmin + merge
         xmax = box.xmax - merge
         ymin = box.ymin + merge
         ymax = box.ymax - merge
-        
+
         if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.get_score() > obj_thresh:
-            
+
             area = (ymax - ymin)*(xmax - xmin)
             z_score = np.sum(image[np.int(ymin):np.int(ymax), np.int(xmin):np.int(xmax)]) / area
-            
+
             if area > area_min:
-                
+
                 box.z_score = z_score
                 new_boxes.append(box)
                 #boxes_area_score[str(num)] = {'xmin': xmin, 'xmax': xmax, 'ymin': ymin, 'ymax': ymax, 'score' : score, 'area' : area}
-       
+
     mean_score = np.mean([box.z_score for box in new_boxes])
     sd_score  = np.std([box.z_score for box in new_boxes])
-    
+
     normal_score = ([box.z_score for box in new_boxes] - mean_score)/sd_score
-#        plt.figure()   
+#        plt.figure()
 #         _ = plt.hist(normal_score, bins='auto')  # arguments are passed to np.histogram
 #        plt.title("Histogram with 'auto' bins")
 #        plt.show()
-#        
+#
 #        plt.figure()
 #        mean = np.mean([boxes_area_score[i]['area'] for i in boxes_area_score])
 #        sd  = np.std([boxes_area_score[i]['area'] for i in boxes_area_score])
@@ -86,37 +86,37 @@ def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0, 
 #        _ = plt.hist(normal, bins='auto')  # arguments are passed to np.histogram
 #        plt.title("Histogram with 'auto' bins")
 #        plt.show()
-    
+
     new_boxes = [box for box in new_boxes if (box.z_score - mean_score)/sd_score > z_thresh]
-    
+
     for box in new_boxes:
-        
+
         z_score = (box.z_score - mean_score)/sd_score
         box.classes[0] = min((z_score-z_thresh)*0.5/(3-z_thresh)+ 0.5, 1)
-        
-   
-    
-    
+
+
+
+
     colors = plt.cm.brg(np.linspace(0, 1, 21)).tolist()
     plt.figure(figsize=(10,6))
     plt.imshow(I,cmap = 'gray')
     current_axis = plt.gca()
-    
+
     for box in new_boxes:
-        
+
         color = colors[2]
-        
+
         #boxes_area_score[key]['score_norm'] = (boxes_area_score[key]['score'] - mean) / sd
-        #z_score = (box.score - mean_score) / sd_score      
-        #z_score = (boxes_area_score[key]['area'] )   
-        
+        #z_score = (box.score - mean_score) / sd_score
+        #z_score = (boxes_area_score[key]['area'] )
+
         ### Escribe el z-score
         #if z_score > 1:
         current_axis.text((box.xmin + box.xmax)/2,
                               (box.ymin+ box.ymax)/2,
                                '%.2f' % box.classes[0], size='x-large',
                               color='white', bbox={'facecolor':color, 'alpha':1.0})
-    
+
     return new_boxes
 
 def _main_(args):
@@ -225,21 +225,21 @@ def _main_(args):
         # the main loop
         times = []
         images = [cv2.imread(image_path) for image_path in image_paths]
-        
+
         print(images)
         start = time.time()
         # predict the bounding boxes
         boxes = get_yolo_boxes(infer_model, images, net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)
         boxes = [[box for box in boxes_image if box.get_score() > obj_thresh] for boxes_image in boxes]
-        
+
         print('Elapsed time = {}'.format(time.time() - start))
         times.append(time.time() - start)
-        
+
         boxes_disc = [disconnect(image, boxes_image, z_thresh = 1.8) for image, boxes_image in zip(images, boxes)]
-            
+
         for image, boxes_image in zip(images, boxes_disc):
-            
-            
+
+
             # draw bounding boxes on the image using labels
             I = image.copy()
             draw_boxes(I, boxes_image, config['model']['labels'], obj_thresh)

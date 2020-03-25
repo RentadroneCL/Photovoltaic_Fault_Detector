@@ -8,16 +8,13 @@ from voc import parse_voc_annotation
 from yolo import create_yolov3_model, dummy_loss
 from generator import BatchGenerator
 from utils.utils import normalize, evaluate, makedirs
-from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from tensorflow.keras.optimizers import Adam
 from callbacks import CustomModelCheckpoint, CustomTensorBoard
 from utils.multi_gpu_model import multi_gpu_model
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import load_model
-
-tf.keras.backend.clear_session()
-tf.config.experimental_run_functions_eagerly(True)
 
 def create_training_instances(
     train_annot_folder,
@@ -69,13 +66,13 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
     makedirs(tensorboard_logs)
 
     early_stop = EarlyStopping(
-        monitor     = 'val_loss',
+        monitor     = 'loss',
         min_delta   = 0.01,
         patience    = 25,
         mode        = 'min',
         verbose     = 1
     )
-    """checkpoint = CustomModelCheckpoint(
+    checkpoint = CustomModelCheckpoint(
         model_to_save   = model_to_save,
         filepath        = saved_weights_name,# + '{epoch:02d}.h5',
         monitor         = 'loss',
@@ -83,15 +80,9 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
         save_best_only  = True,
         mode            = 'min',
         save_freq       = 1
-    )"""
-    checkpoint = ModelCheckpoint(filepath=saved_weights_name,
-                                 monitor='val_loss',
-                                 save_best_only=True,
-                                 save_weights_only=True,
-                                 verbose=1)
-
+    )
     reduce_on_plateau = ReduceLROnPlateau(
-        monitor  = 'val_loss',
+        monitor  = 'loss',
         factor   = 0.5,
         patience = 15,
         verbose  = 1,
@@ -105,7 +96,7 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
         write_graph            = True,
         write_images           = True,
     )
-    return [early_stop, checkpoint, reduce_on_plateau]
+    return [early_stop, checkpoint, reduce_on_plateau, tensorboard]
 
 def create_model(
     nb_class,
@@ -254,23 +245,20 @@ def _main_(args):
 	backend		    = config['model']['backend']
     )
 
-
     ###############################
     #   Kick off the training
     ###############################
     callbacks = create_callbacks(config['train']['saved_weights_name'], config['train']['tensorboard_dir'], infer_model)
 
     train_model.fit(
-        x = train_generator,
-        validation_data = valid_generator,
+        generator        = train_generator,
         steps_per_epoch  = len(train_generator) * config['train']['train_times'],
         epochs           = config['train']['nb_epochs'] + config['train']['warmup_epochs'],
         verbose          = 2 if config['train']['debug'] else 1,
+        callbacks        = callbacks,
         workers          = 4,
-        max_queue_size   = 8,
-        callbacks        = callbacks
+        max_queue_size   = 8
     )
-
 
     # make a GPU version of infer_model for evaluation
     if multi_gpu > 1:

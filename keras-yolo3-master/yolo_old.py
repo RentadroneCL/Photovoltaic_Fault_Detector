@@ -22,7 +22,7 @@ class YoloLayer(Layer):
         max_grid_h, max_grid_w = max_grid
 
         cell_x = tf.cast(tf.reshape(tf.tile(tf.range(max_grid_w), [max_grid_h]), (1, max_grid_h, max_grid_w, 1, 1)), dtype=tf.float32)
-        cell_y = tf.transpose(a=cell_x, perm=(0,2,1,3,4))
+        cell_y = tf.transpose(cell_x, (0,2,1,3,4))
         self.cell_grid = tf.tile(tf.concat([cell_x,cell_y],-1), [batch_size, 1, 1, 3, 1])
 
         super(YoloLayer, self).__init__(**kwargs)
@@ -34,7 +34,7 @@ class YoloLayer(Layer):
         input_image, y_pred, y_true, true_boxes = x
 
         # adjust the shape of the y_predict [batch, grid_h, grid_w, 3, 4+1+nb_class]
-        y_pred = tf.reshape(y_pred, tf.concat([tf.shape(input=y_pred)[:3], tf.constant([3, -1])], axis=0))
+        y_pred = tf.reshape(y_pred, tf.concat([tf.shape(y_pred)[:3], tf.constant([3, -1])], axis=0))
 
         # initialize the masks
         object_mask     = tf.expand_dims(y_true[..., 4], 4)
@@ -43,12 +43,12 @@ class YoloLayer(Layer):
         batch_seen = tf.Variable(0.)
 
         # compute grid factor and net factor
-        grid_h      = tf.shape(input=y_true)[1]
-        grid_w      = tf.shape(input=y_true)[2]
+        grid_h      = tf.shape(y_true)[1]
+        grid_w      = tf.shape(y_true)[2]
         grid_factor = tf.reshape(tf.cast([grid_w, grid_h], tf.float32), [1,1,1,1,2])
 
-        net_h       = tf.shape(input=input_image)[1]
-        net_w       = tf.shape(input=input_image)[2]
+        net_h       = tf.shape(input_image)[1]
+        net_w       = tf.shape(input_image)[2]
         net_factor  = tf.reshape(tf.cast([net_w, net_h], tf.float32), [1,1,1,1,2])
 
         """
@@ -65,7 +65,7 @@ class YoloLayer(Layer):
         true_box_xy    = y_true[..., 0:2] # (sigma(t_xy) + c_xy)
         true_box_wh    = y_true[..., 2:4] # t_wh
         true_box_conf  = tf.expand_dims(y_true[..., 4], 4)
-        true_box_class = tf.argmax(input=y_true[..., 5:], axis=-1)
+        true_box_class = tf.argmax(y_true[..., 5:], -1)
 
         """
         Compare each predicted box to all true boxes
@@ -100,7 +100,7 @@ class YoloLayer(Layer):
         union_areas = pred_areas + true_areas - intersect_areas
         iou_scores  = tf.truediv(intersect_areas, union_areas)
 
-        best_ious   = tf.reduce_max(input_tensor=iou_scores, axis=4)
+        best_ious   = tf.reduce_max(iou_scores, axis=4)
         conf_delta *= tf.expand_dims(tf.cast(best_ious < self.ignore_thresh, dtype=tf.float32), 4)
 
         """
@@ -133,27 +133,27 @@ class YoloLayer(Layer):
         iou_scores  = object_mask * tf.expand_dims(iou_scores, 4)
 
 
-        count       = tf.reduce_sum(input_tensor=object_mask)
-        count_noobj = tf.reduce_sum(input_tensor=1 - object_mask)
+        count       = tf.reduce_sum(object_mask)
+        count_noobj = tf.reduce_sum(1 - object_mask)
         detect_mask = tf.cast((pred_box_conf*object_mask) >= 0.5, dtype=tf.float32)
-        class_mask  = tf.expand_dims(tf.cast(tf.equal(tf.argmax(input=pred_box_class, axis=-1), true_box_class), dtype=tf.float32), 4)
-        recall50    = tf.reduce_sum(input_tensor=tf.cast(iou_scores >= 0.5, dtype=tf.float32) * detect_mask  * class_mask) / (count + 1e-3)
-        recall75    = tf.reduce_sum(input_tensor=tf.cast(iou_scores >= 0.75, dtype=tf.float32) * detect_mask  * class_mask) / (count + 1e-3)
-        avg_iou     = tf.reduce_sum(input_tensor=iou_scores) / (count + 1e-3)
-        avg_obj     = tf.reduce_sum(input_tensor=pred_box_conf  * object_mask)  / (count + 1e-3)
-        avg_noobj   = tf.reduce_sum(input_tensor=pred_box_conf  * (1-object_mask))  / (count_noobj + 1e-3)
-        avg_cat     = tf.reduce_sum(input_tensor=object_mask * class_mask) / (count + 1e-3)
+        class_mask  = tf.expand_dims(tf.cast(tf.equal(tf.argmax(pred_box_class, -1), true_box_class), dtype=tf.float32), 4)
+        recall50    = tf.reduce_sum(tf.cast(iou_scores >= 0.5, dtype=tf.float32) * detect_mask  * class_mask) / (count + 1e-3)
+        recall75    = tf.reduce_sum(tf.cast(iou_scores >= 0.75, dtype=tf.float32) * detect_mask  * class_mask) / (count + 1e-3)
+        avg_iou     = tf.reduce_sum(iou_scores) / (count + 1e-3)
+        avg_obj     = tf.reduce_sum(pred_box_conf  * object_mask)  / (count + 1e-3)
+        avg_noobj   = tf.reduce_sum(pred_box_conf  * (1-object_mask))  / (count_noobj + 1e-3)
+        avg_cat     = tf.reduce_sum(object_mask * class_mask) / (count + 1e-3)
 
         """
         Warm-up training
         """
         #batch_seen = tf.assign_add(batch_seen, 1.)
         batch_seen.assign_add(1.)
-        true_box_xy, true_box_wh, xywh_mask = tf.cond(pred=tf.less(batch_seen, self.warmup_batches+1),
-                              true_fn=lambda: [true_box_xy + (0.5 + self.cell_grid[:,:grid_h,:grid_w,:,:]) * (1-object_mask),
+        true_box_xy, true_box_wh, xywh_mask = tf.cond(tf.less(batch_seen, self.warmup_batches+1),
+                              lambda: [true_box_xy + (0.5 + self.cell_grid[:,:grid_h,:grid_w,:,:]) * (1-object_mask),
                                        true_box_wh + tf.zeros_like(true_box_wh) * (1-object_mask),
                                        tf.ones_like(object_mask)],
-                              false_fn=lambda: [true_box_xy,
+                              lambda: [true_box_xy,
                                        true_box_wh,
                                        object_mask])
 
@@ -170,10 +170,10 @@ class YoloLayer(Layer):
                       tf.expand_dims(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=true_box_class, logits=pred_box_class), 4) * \
                       self.class_scale
 
-        loss_xy    = tf.reduce_sum(input_tensor=tf.square(xy_delta),       axis=list(range(1,5)))
-        loss_wh    = tf.reduce_sum(input_tensor=tf.square(wh_delta),       axis=list(range(1,5)))
-        loss_conf  = tf.reduce_sum(input_tensor=tf.square(conf_delta),     axis=list(range(1,5)))
-        loss_class = tf.reduce_sum(input_tensor=class_delta,               axis=list(range(1,5)))
+        loss_xy    = tf.reduce_sum(tf.square(xy_delta),       list(range(1,5)))
+        loss_wh    = tf.reduce_sum(tf.square(wh_delta),       list(range(1,5)))
+        loss_conf  = tf.reduce_sum(tf.square(conf_delta),     list(range(1,5)))
+        loss_class = tf.reduce_sum(class_delta,               list(range(1,5)))
 
         loss = loss_xy + loss_wh + loss_conf + loss_class
 
@@ -362,4 +362,4 @@ def create_yolov3_model(
     return [train_model, infer_model]
 
 def dummy_loss(y_true, y_pred):
-    return tf.sqrt(tf.reduce_sum(input_tensor=y_pred))
+    return tf.sqrt(tf.reduce_sum(y_pred))

@@ -1,5 +1,5 @@
-from keras.layers import Lambda, concatenate
-from keras.models import Model
+from tensorflow.keras.layers import Lambda, concatenate
+from tensorflow.keras.models import Model
 import tensorflow as tf
 
 def multi_gpu_model(model, gpus):
