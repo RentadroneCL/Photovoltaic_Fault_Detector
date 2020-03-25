@@ -15,7 +15,7 @@ from tqdm import tqdm
 import numpy as np
 
 
-def disconnect(image, boxes, obj_thresh = 0.5, area_min = 400, merge = 0):
+def disconnect(image, boxes, obj_thresh = 0.5, area_min = 400, merge = 0, z_thresh = 1.8):
     
     new_boxes = []
     for num, box in enumerate(boxes):
@@ -25,31 +25,31 @@ def disconnect(image, boxes, obj_thresh = 0.5, area_min = 400, merge = 0):
         ymin = box.ymin + merge
         ymax = box.ymax - merge
         
-        if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.classes[0] > obj_thresh:
+        if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.get_score() > obj_thresh:
             
             area = (ymax - ymin)*(xmax - xmin)
             z_score = np.sum(image[np.int(ymin):np.int(ymax), np.int(xmin):np.int(xmax)]) / area
             
             if area > area_min:
                 
-                box.score = z_score
+                box.z_score = z_score
                 new_boxes.append(box)
                 #boxes_area_score[str(num)] = {'xmin': xmin, 'xmax': xmax, 'ymin': ymin, 'ymax': ymax, 'score' : score, 'area' : area}
        
-    mean_score = np.mean([box.score for box in new_boxes])
-    sd_score  = np.std([box.score for box in new_boxes])
+    mean_score = np.mean([box.z_score for box in new_boxes])
+    sd_score  = np.std([box.z_score for box in new_boxes])
     
-    new_boxes = [box for box in new_boxes if (box.score - mean_score)/sd_score > 2]
+    new_boxes = [box for box in new_boxes if (box.z_score - mean_score)/sd_score > z_thresh]
     
     for box in new_boxes:
         
-        z_score = (box.score - mean_score)/sd_score
-        box.classes[0] = min((z_score-2)*0.5+ 0.5, 1)
+        z_score = (box.z_score - mean_score)/sd_score
+        box.classes[0] = min((z_score-z_thresh)*0.5/(3-z_thresh)+ 0.5, 1)
         
     return new_boxes
     
 
-def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0):
+def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0,  z_thresh = 1.8):
         
     new_boxes = []
     for num, box in enumerate(boxes):
@@ -59,21 +59,21 @@ def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0):
         ymin = box.ymin + merge
         ymax = box.ymax - merge
         
-        if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.classes[0] > obj_thresh:
+        if xmin > 0 and ymin > 0 and xmax < image.shape[1] and ymax < image.shape[0] and box.get_score() > obj_thresh:
             
             area = (ymax - ymin)*(xmax - xmin)
             z_score = np.sum(image[np.int(ymin):np.int(ymax), np.int(xmin):np.int(xmax)]) / area
             
             if area > area_min:
                 
-                box.score = z_score
+                box.z_score = z_score
                 new_boxes.append(box)
                 #boxes_area_score[str(num)] = {'xmin': xmin, 'xmax': xmax, 'ymin': ymin, 'ymax': ymax, 'score' : score, 'area' : area}
        
-    mean_score = np.mean([box.score for box in new_boxes])
-    sd_score  = np.std([box.score for box in new_boxes])
+    mean_score = np.mean([box.z_score for box in new_boxes])
+    sd_score  = np.std([box.z_score for box in new_boxes])
     
-     normal_score = ([box.score for box in new_boxes] - mean_score)/sd_score
+    normal_score = ([box.z_score for box in new_boxes] - mean_score)/sd_score
 #        plt.figure()   
 #         _ = plt.hist(normal_score, bins='auto')  # arguments are passed to np.histogram
 #        plt.title("Histogram with 'auto' bins")
@@ -87,12 +87,12 @@ def disconnect_plot(image, boxes,  obj_thresh = 0.5, area_min = 400, merge = 0):
 #        plt.title("Histogram with 'auto' bins")
 #        plt.show()
     
-    new_boxes = [box for box in new_boxes if (box.score - mean_score)/sd_score > 2]
+    new_boxes = [box for box in new_boxes if (box.z_score - mean_score)/sd_score > z_thresh]
     
     for box in new_boxes:
         
-        z_score = (box.score - mean_score)/sd_score
-        box.classes[0] = min((z_score-2)*0.5+ 0.5, 1)
+        z_score = (box.z_score - mean_score)/sd_score
+        box.classes[0] = min((z_score-z_thresh)*0.5/(3-z_thresh)+ 0.5, 1)
         
    
     
@@ -224,20 +224,27 @@ def _main_(args):
 
         # the main loop
         times = []
-
-        for image_path in image_paths:
+        images = [cv2.imread(image_path) for image_path in image_paths]
+        
+        print(images)
+        start = time.time()
+        # predict the bounding boxes
+        boxes = get_yolo_boxes(infer_model, images, net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)
+        boxes = [[box for box in boxes_image if box.get_score() > obj_thresh] for boxes_image in boxes]
+        
+        print('Elapsed time = {}'.format(time.time() - start))
+        times.append(time.time() - start)
+        
+        boxes_disc = [disconnect(image, boxes_image, z_thresh = 1.8) for image, boxes_image in zip(images, boxes)]
             
-            image = cv2.imread(image_path)
-            print(image_path)
-            start = time.time()
-            # predict the bounding boxes
-            boxes = get_yolo_boxes(infer_model, [image], net_h, net_w, config['model']['anchors'], obj_thresh, nms_thresh)[0]
-            print('Elapsed time = {}'.format(time.time() - start))
-            times.append(time.time() - start)
+        for image, boxes_image in zip(images, boxes_disc):
+            
+            
             # draw bounding boxes on the image using labels
             I = image.copy()
-            draw_boxes(I, boxes, config['model']['labels'], obj_thresh)
-
+            draw_boxes(I, boxes_image, config['model']['labels'], obj_thresh)
+            plt.figure(figsize = (10,12))
+            plt.imshow(I)
             # write the image with bounding boxes to file
             cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))
 
