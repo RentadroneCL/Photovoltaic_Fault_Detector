@@ -6,11 +6,11 @@
 ## To do list:
 - [x] Import model detection (SSD & YOLO3)
 - [x] Model Panel Detection (SSD7)
-- [ ] Model Panel Detection (YOLO3)
+- [x] Model Panel Detection (YOLO3)
 - [x] Model Soiling Fault Detection (YOLO3)
 - [x] Model Diode Fault  Detection (YOLO3)
 - [ ] Model Other Fault  Detection
-- [ ] Model Fault Panel Disconnect
+- [x] Model Fault Panel Disconnect
 - [x] Example use Trained Model
 
 
@@ -19,8 +19,8 @@
 
 * Python 3.x
 * Numpy
-* TensorFlow 1.x
-* Keras 2.x
+* TensorFlow 2.x
+* Keras 2.x (in TensorFlow)
 * OpenCV
 * Beautiful Soup 4.x
 
@@ -185,6 +185,12 @@ On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), 
 
 ![](Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg)
 
+
+### YOLO3
+On folder [Result yolo3 panel](Result_yolo3_panel/)  weight and result of this model (mAP 86.3%).
+
+![](Result_yolo3_panel/Mision%203_DJI_0045.jpg)
+
 ## Soiling Fault Detector
 ### SSD300
 On folder [Result ssd300 fault 1](Result_ssd300_fault_1/) show code (jupyter notebook), weight and result of this model (mAP 79.5%).
@@ -206,7 +212,16 @@ On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Res
 
 ![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
 
+## Panel Disconnect Detector
+### YOLO3
+To use the detector we must only use 'panel_yolo3_disconnect.py' with the previously established form, that is:
+`python predict_yolo3_disconnect.py -c config_full_yolo_panel_infer.json -i /path/to/image/ -o /path/output/result`
+To use this model, only the yolo3_panel detector model is needed.
 
+
+![](Result_yolo3_panel/Mision%2011_DJI_0058.jpg)
+
+The idea to detect the disconnection is by calculating the luminosity of each panel, to then normalize this data and highlight the panels with a luminosity out of normality.
 
 # Contributing
 
