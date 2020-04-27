@@ -183,7 +183,7 @@ Compute the mAP performance of the model defined in `saved_weights_name` on the 
 # Result
 All of weights of this trained model grab from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
 
-|      Model     | Pretrained Weights |  Config  |
+|      Model     |  Weights Trained |  Config  |
 |:--------------:|:------------------:|:--------:|
 |   SSD7 Panel   |      [weight](https://drive.google.com/open?id=1qNjfAp9sW1VJh8ewnb3NKuafhZockTqV)      | [config](Result_ssd7_panel/config_7_panel.json) |
 | SSD300 Soiling |      [weight](https://drive.google.com/open?id=1IiOyYW8yPAh4IALbM_ZVqRhLdxV-ZSPw)      | [config](config_300_fault_1.json) |
