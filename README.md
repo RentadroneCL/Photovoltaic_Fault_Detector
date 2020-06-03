@@ -191,6 +191,8 @@ All of weights of this trained model grab from [Drive_Weights](https://drive.goo
 |  YOLO3 Soiling |      [weight](https://drive.google.com/open?id=1YLgkn1wL5xAGOpwd2gzdfsJVGYPzszn-)      | [config](config_full_yolo_fault_1_infer.json) |
 |   YOLO3 Diode  |      [weight](https://drive.google.com/open?id=1VUtrK9JVTbzBw5dX7_dgLTMToFHbAJl1)      | [config](config_full_yolo_fault_4_infer.json) |
 
+|   YOLO3 Affected Cell  |      [weight_lack](...)      | [config](config_full_yolo_fault_2_infer.json) |
+
 ## Panel Detector
 ### SDD7
 On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), weight and result of this model (mAP 89.8%).
