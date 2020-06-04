@@ -58,7 +58,7 @@ def bbox_iou(box1, box2):
 
     return float(intersect) / union
 
-def draw_boxes(image, boxes, labels, obj_thresh, quiet=True):
+def draw_boxes(image, boxes, labels, obj_thresh, quiet=True, number_color = False):
     for box in boxes:
         label_str = ''
         label = -1
@@ -77,6 +77,9 @@ def draw_boxes(image, boxes, labels, obj_thresh, quiet=True):
                                [box.xmin-3,        box.ymin-height-16],
                                [box.xmin+width+6, box.ymin-height-16],
                                [box.xmin+width+6, box.ymin]], dtype='int32')
+            # Use one only color
+            if number_color:
+                label = number_color
 
             cv2.rectangle(img=image, pt1=(box.xmin,box.ymin), pt2=(box.xmax,box.ymax), color=get_color(label), thickness=1)
             cv2.fillPoly(img=image, pts=[region], color=get_color(label))

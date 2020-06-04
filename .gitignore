@@ -17,5 +17,8 @@ keras-yolo3-master/log_experimento_fault_gpu/
 Result_ssd300_fault_4/
 Result_yolo3_fault_4/result_otros/
 Result_Ortofoto/
+Result_Complete/
+Result_Complete_Example/
+Train&Test_H/
 *.h5
 *.tif
