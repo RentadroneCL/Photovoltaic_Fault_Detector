@@ -1,7 +1,7 @@
 
 # Rentadrone_MachineLearning  Photovoltaic fault detector 
 
-
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ## To do list:
 - [x] Import model detection (SSD & YOLO3)
