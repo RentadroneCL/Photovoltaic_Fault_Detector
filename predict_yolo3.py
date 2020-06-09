@@ -8,9 +8,10 @@ import cv2
 import sys
 sys.path += [os.path.abspath('keras-yolo3-master')]
 
+
 from utils.utils import get_yolo_boxes, makedirs
 from utils.bbox import draw_boxes
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from tqdm import tqdm
 import numpy as np
 

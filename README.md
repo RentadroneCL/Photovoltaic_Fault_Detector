@@ -19,8 +19,8 @@
 
 * Python 3.x
 * Numpy
-* TensorFlow 1.x
-* Keras 2.x
+* TensorFlow 2.x
+* Keras 2.x (in TensorFlow)
 * OpenCV
 * Beautiful Soup 4.x
 
@@ -30,6 +30,11 @@ The models used for detection are SSD [SSD: Single Shot MultiBox Detector](https
 * [YOLOv3_Keras](https://github.com/experiencor/keras-yolo3)
 
 Grab the pretrained weights of SSD and  YOLO3 from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
+
+|    Model    |  Pretrained Weights |
+|:-----------:|:-------------------:|
+| SSD7/SSD300 |    [Weight VGG16](https://drive.google.com/open?id=1VHTx28tGI94yFqwT_WHp-xkx_8Hh_A31)|
+|    YOLO3    | [Weight Full Yolo3](https://drive.google.com/open?id=1cnCQHl-TnOrwb-leug1I0O9vMBaSwJLt)|
 
 ## Type of Data
 The images used for the design of this model were extracted by air analysis, specifically: FLIR aerial radiometric thermal infrared pictures, taken by UAV (R-JPEG format). Which were converted into .jpg images for the training of these detection models.
@@ -177,6 +182,17 @@ Compute the mAP performance of the model defined in `saved_weights_name` on the 
 
 # Result
 All of weights of this trained model grab from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
+
+|      Model     |  Weights Trained |  Config  |
+|:--------------:|:------------------:|:--------:|
+|   SSD7 Panel   |      [weight](https://drive.google.com/open?id=1qNjfAp9sW1VJh8ewnb3NKuafhZockTqV)      | [config](Result_ssd7_panel/config_7_panel.json) |
+| SSD300 Soiling |      [weight](https://drive.google.com/open?id=1IiOyYW8yPAh4IALbM_ZVqRhLdxV-ZSPw)      | [config](config_300_fault_1.json) |
+|   YOLO3 Panel  |      [weight](https://drive.google.com/open?id=14zgtgDJv3KTvhRC-VOz6sqsGPC_bdrL1)      | [config](config_full_yolo_panel_infer.json) |
+|  YOLO3 Soiling |      [weight](https://drive.google.com/open?id=1YLgkn1wL5xAGOpwd2gzdfsJVGYPzszn-)      | [config](config_full_yolo_fault_1_infer.json) |
+|   YOLO3 Diode  |      [weight](https://drive.google.com/open?id=1VUtrK9JVTbzBw5dX7_dgLTMToFHbAJl1)      | [config](config_full_yolo_fault_4_infer.json) |
+
+|   YOLO3 Affected Cell  |      [weight_lack](...)      | [config](config_full_yolo_fault_2_infer.json) |
+
 ## Panel Detector
 ### SDD7
 On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), weight and result of this model (mAP 89.8%).
@@ -184,6 +200,12 @@ On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), 
 ![](Result_ssd7_panel/result_ssd7_panel/DJI_0020.jpg)
 
 ![](Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg)
+
+
+### YOLO3
+On folder [Result yolo3 panel](Result_yolo3_panel/)  weight and result of this model (mAP 86.3%).
+
+![](Result_yolo3_panel/Mision%203_DJI_0045.jpg)
 
 ## Soiling Fault Detector
 ### SSD300
@@ -206,7 +228,16 @@ On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Res
 
 ![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
 
+## Panel Disconnect Detector
+### YOLO3
+To use the detector we must only use 'panel_yolo3_disconnect.py' with the previously established form, that is:
+`python predict_yolo3_disconnect.py -c config_full_yolo_panel_infer.json -i /path/to/image/ -o /path/output/result`
+To use this model, only the yolo3_panel detector model is needed.
 
+
+![](Result_yolo3_panel/Mision%2011_DJI_0058.jpg)
+
+The idea to detect the disconnection is by calculating the luminosity of each panel, to then normalize this data and highlight the panels with a luminosity out of normality.
 
 # Contributing
 
