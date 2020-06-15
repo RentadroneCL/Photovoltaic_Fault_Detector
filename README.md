@@ -1,5 +1,5 @@
 
-# Rentadrone_MachineLearning  Photovoltaic fault detector 
+# Rentadrone_MachineLearning  Photovoltaic fault detector
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
@@ -48,7 +48,7 @@ Same image in .jpg format:
 
 ## Training
 
-### 1. Data preparation 
+### 1. Data preparation
 
 View folder Train&Test_A/ and Train&Test_S/, example of panel anns and soiling fault anns.
 
@@ -61,8 +61,8 @@ Organize the dataset into 4 folders:
 + valid_image_folder <= the folder that contains the validation images.
 
 + valid_annot_folder <= the folder that contains the validation annotations in VOC format.
-    
-There is a one-to-one correspondence by file name between images and annotations. 
+
+There is a one-to-one correspondence by file name between images and annotations.
 For create own data set use LabelImg code from :
 [https://github.com/tzutalin/labelImg](https://github.com/tzutalin/labelImg)
 
@@ -190,8 +190,7 @@ All of weights of this trained model grab from [Drive_Weights](https://drive.goo
 |   YOLO3 Panel  |      [weight](https://drive.google.com/open?id=14zgtgDJv3KTvhRC-VOz6sqsGPC_bdrL1)      | [config](config_full_yolo_panel_infer.json) |
 |  YOLO3 Soiling |      [weight](https://drive.google.com/open?id=1YLgkn1wL5xAGOpwd2gzdfsJVGYPzszn-)      | [config](config_full_yolo_fault_1_infer.json) |
 |   YOLO3 Diode  |      [weight](https://drive.google.com/open?id=1VUtrK9JVTbzBw5dX7_dgLTMToFHbAJl1)      | [config](config_full_yolo_fault_4_infer.json) |
-
-|   YOLO3 Affected Cell  |      [weight_lack](...)      | [config](config_full_yolo_fault_2_infer.json) |
+|   YOLO3 Affected Cell    |      [weight(https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
 
 ## Panel Detector
 ### SDD7
@@ -221,12 +220,20 @@ On folder [Result yolo3 fault 1](Result_yolo3_fault_1/) show [history train](Res
 
 ![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
 
+## Diode Affected Cell Detector
+### YOLO3
+On folder [Result yolo3 fault 2](Result_yolo3_fault_2/) show [history train](Result_yolo3_fault_2/yolo3_full_yolo.output), weight and result of this model (mAP 71.93%).
+
+![](Result_yolo3_fault_2/result_yolo3_fault_2/Mision%2010_DJI_0093.jpg)
 
 ## Diode Fault Detector
 ### YOLO3
-On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Result_yolo3_fault_4/yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
+On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Result_yolo3_fault_4/yolo3_full_yolo.output), weight and result of this model (mAP 66.22%).
 
 ![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
+
+
+
 
 ## Panel Disconnect Detector
 ### YOLO3
@@ -257,3 +264,4 @@ Before sending your pull requests, make sure you followed this list.
 # Example to use trained model
 
 In ['Example_Prediction'](Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
+In ['Example_Prediction_AllInOne'](Example Detection AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
