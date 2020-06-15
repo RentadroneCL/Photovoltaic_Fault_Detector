@@ -9,7 +9,7 @@
 - [x] Model Panel Detection (YOLO3)
 - [x] Model Soiling Fault Detection (YOLO3)
 - [x] Model Diode Fault  Detection (YOLO3)
-- [ ] Model Other Fault  Detection
+- [x] Model Other Fault  Detection
 - [x] Model Fault Panel Disconnect
 - [x] Example use Trained Model
 
