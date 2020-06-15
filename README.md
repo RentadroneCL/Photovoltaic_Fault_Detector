@@ -190,7 +190,7 @@ All of weights of this trained model grab from [Drive_Weights](https://drive.goo
 |   YOLO3 Panel  |      [weight](https://drive.google.com/open?id=14zgtgDJv3KTvhRC-VOz6sqsGPC_bdrL1)      | [config](config_full_yolo_panel_infer.json) |
 |  YOLO3 Soiling |      [weight](https://drive.google.com/open?id=1YLgkn1wL5xAGOpwd2gzdfsJVGYPzszn-)      | [config](config_full_yolo_fault_1_infer.json) |
 |   YOLO3 Diode  |      [weight](https://drive.google.com/open?id=1VUtrK9JVTbzBw5dX7_dgLTMToFHbAJl1)      | [config](config_full_yolo_fault_4_infer.json) |
-|   YOLO3 Affected Cell    |      [weight(https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
+|   YOLO3 Affected Cell    |      [weight](https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
 
 ## Panel Detector
 ### SDD7
@@ -220,7 +220,7 @@ On folder [Result yolo3 fault 1](Result_yolo3_fault_1/) show [history train](Res
 
 ![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
 
-## Diode Affected Cell Detector
+## Affected Cell Detector
 ### YOLO3
 On folder [Result yolo3 fault 2](Result_yolo3_fault_2/) show [history train](Result_yolo3_fault_2/yolo3_full_yolo.output), weight and result of this model (mAP 71.93%).
 
