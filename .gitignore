@@ -19,6 +19,8 @@ Result_yolo3_fault_4/result_otros/
 Result_Ortofoto/
 Result_Complete/
 Result_Complete_Example/
+Problem_weights_saved.ipynb
 Train&Test_H/
+
 *.h5
 *.tif

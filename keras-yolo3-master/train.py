@@ -69,7 +69,7 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
     makedirs(tensorboard_logs)
 
     early_stop = EarlyStopping(
-        monitor     = 'val_loss',
+        monitor     = 'loss',
         min_delta   = 0.01,
         patience    = 25,
         mode        = 'min',
@@ -85,13 +85,14 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
         save_freq       = 1
     )"""
     checkpoint = ModelCheckpoint(filepath=saved_weights_name,
-                                 monitor='val_loss',
+                                 monitor='loss',
                                  save_best_only=True,
                                  save_weights_only=True,
+                                 mode = 1,
                                  verbose=1)
 
     reduce_on_plateau = ReduceLROnPlateau(
-        monitor  = 'val_loss',
+        monitor  = 'loss',
         factor   = 0.5,
         patience = 15,
         verbose  = 1,
@@ -105,7 +106,7 @@ def create_callbacks(saved_weights_name, tensorboard_logs, model_to_save):
         write_graph            = True,
         write_images           = True,
     )
-    return [early_stop, checkpoint, reduce_on_plateau]
+    return [early_stop, checkpoint, reduce_on_plateau, tensorboard]
 
 def create_model(
     nb_class,
@@ -273,9 +274,10 @@ def _main_(args):
 
 
     # make a GPU version of infer_model for evaluation
-    if multi_gpu > 1:
-        infer_model = load_model(config['train']['saved_weights_name'])
-
+    #if multi_gpu > 1:
+    #    infer_model = load_model(config['train']['saved_weights_name'])
+    infer_model.load_weights(config['train']['saved_weights_name'])
+    infer_model.save(config['train']['saved_weights_name'])
     ###############################
     #   Run the evaluation
     ###############################

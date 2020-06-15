@@ -1,0 +1,337 @@
+Seen labels: 	{'2': 127}
+
+Given labels: 	['2']
+
+Training on: 	['2']
+
+multi_gpu:1
+
+Loading pretrained weights.
+
+Train for 40 steps, validate for 10 steps
+Loading pretrained weights.
+
+Epoch 1/200
+ - 269s - loss: 10.3918 - yolo_layer_1_loss: 0.2670 - yolo_layer_2_loss: 1.2377 - yolo_layer_3_loss: 8.8871
+
+Epoch 00001: loss improved from inf to 10.39175, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 2/200
+ - 248s - loss: 9.0657 - yolo_layer_1_loss: 0.0042 - yolo_layer_2_loss: 0.8107 - yolo_layer_3_loss: 8.2509
+
+Epoch 00002: loss improved from 10.39175 to 9.06572, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 3/200
+ - 250s - loss: 7.7642 - yolo_layer_1_loss: 0.0021 - yolo_layer_2_loss: 0.5234 - yolo_layer_3_loss: 7.2387
+
+Epoch 00003: loss improved from 9.06572 to 7.76417, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 4/200
+ - 250s - loss: 7.6795 - yolo_layer_1_loss: 0.0018 - yolo_layer_2_loss: 0.2856 - yolo_layer_3_loss: 7.3921
+
+Epoch 00004: loss improved from 7.76417 to 7.67951, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 5/200
+ - 250s - loss: 7.8414 - yolo_layer_1_loss: 0.0011 - yolo_layer_2_loss: 0.4949 - yolo_layer_3_loss: 7.3454
+
+Epoch 00005: loss did not improve from 7.67951
+Epoch 6/200
+ - 250s - loss: 8.1152 - yolo_layer_1_loss: 0.0016 - yolo_layer_2_loss: 0.5053 - yolo_layer_3_loss: 7.6083
+
+Epoch 00006: loss did not improve from 7.67951
+Epoch 7/200
+ - 249s - loss: 7.3296 - yolo_layer_1_loss: 6.0819e-04 - yolo_layer_2_loss: 0.4263 - yolo_layer_3_loss: 6.9027
+
+Epoch 00007: loss improved from 7.67951 to 7.32961, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 8/200
+ - 250s - loss: 7.8274 - yolo_layer_1_loss: 7.9464e-04 - yolo_layer_2_loss: 0.5090 - yolo_layer_3_loss: 7.3175
+
+Epoch 00008: loss did not improve from 7.32961
+Epoch 9/200
+ - 250s - loss: 8.0380 - yolo_layer_1_loss: 8.6137e-04 - yolo_layer_2_loss: 0.6514 - yolo_layer_3_loss: 7.3856
+
+Epoch 00009: loss did not improve from 7.32961
+Epoch 10/200
+ - 250s - loss: 7.9667 - yolo_layer_1_loss: 0.0022 - yolo_layer_2_loss: 0.6072 - yolo_layer_3_loss: 7.3574
+
+Epoch 00010: loss did not improve from 7.32961
+Epoch 11/200
+ - 250s - loss: 8.4253 - yolo_layer_1_loss: 0.0012 - yolo_layer_2_loss: 0.6697 - yolo_layer_3_loss: 7.7544
+
+Epoch 00011: loss did not improve from 7.32961
+Epoch 12/200
+ - 250s - loss: 8.0104 - yolo_layer_1_loss: 0.0010 - yolo_layer_2_loss: 0.2845 - yolo_layer_3_loss: 7.7248
+
+Epoch 00012: loss did not improve from 7.32961
+Epoch 13/200
+ - 250s - loss: 8.7709 - yolo_layer_1_loss: 7.4243e-04 - yolo_layer_2_loss: 0.8608 - yolo_layer_3_loss: 7.9093
+
+Epoch 00013: loss did not improve from 7.32961
+Epoch 14/200
+ - 250s - loss: 8.7679 - yolo_layer_1_loss: 7.1667e-04 - yolo_layer_2_loss: 1.2540 - yolo_layer_3_loss: 7.5131
+
+Epoch 00014: loss did not improve from 7.32961
+Epoch 15/200
+ - 249s - loss: 6.9143 - yolo_layer_1_loss: 6.4281e-04 - yolo_layer_2_loss: 0.8410 - yolo_layer_3_loss: 6.0726
+
+Epoch 00015: loss improved from 7.32961 to 6.91428, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 16/200
+ - 250s - loss: 6.4881 - yolo_layer_1_loss: 5.6383e-04 - yolo_layer_2_loss: 0.4001 - yolo_layer_3_loss: 6.0874
+
+Epoch 00016: loss improved from 6.91428 to 6.48809, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 17/200
+ - 250s - loss: 8.0069 - yolo_layer_1_loss: 4.0944e-04 - yolo_layer_2_loss: 1.3397 - yolo_layer_3_loss: 6.6669
+
+Epoch 00017: loss did not improve from 6.48809
+Epoch 18/200
+ - 250s - loss: 6.3577 - yolo_layer_1_loss: 2.9129e-04 - yolo_layer_2_loss: 0.7906 - yolo_layer_3_loss: 5.5668
+
+Epoch 00018: loss improved from 6.48809 to 6.35768, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 19/200
+ - 249s - loss: 6.7679 - yolo_layer_1_loss: 3.0164e-04 - yolo_layer_2_loss: 0.5212 - yolo_layer_3_loss: 6.2463
+
+Epoch 00019: loss did not improve from 6.35768
+Epoch 20/200
+ - 249s - loss: 6.4508 - yolo_layer_1_loss: 2.7047e-04 - yolo_layer_2_loss: 0.2659 - yolo_layer_3_loss: 6.1846
+
+Epoch 00020: loss did not improve from 6.35768
+Epoch 21/200
+ - 249s - loss: 6.3571 - yolo_layer_1_loss: 2.9117e-04 - yolo_layer_2_loss: 0.3484 - yolo_layer_3_loss: 6.0084
+
+Epoch 00021: loss improved from 6.35768 to 6.35713, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 22/200
+ - 249s - loss: 6.4931 - yolo_layer_1_loss: 2.4105e-04 - yolo_layer_2_loss: 0.5846 - yolo_layer_3_loss: 5.9083
+
+Epoch 00022: loss did not improve from 6.35713
+Epoch 23/200
+ - 249s - loss: 6.4707 - yolo_layer_1_loss: 1.9136e-04 - yolo_layer_2_loss: 0.5451 - yolo_layer_3_loss: 5.9254
+
+Epoch 00023: loss did not improve from 6.35713
+Epoch 24/200
+ - 249s - loss: 5.9562 - yolo_layer_1_loss: 1.3915e-04 - yolo_layer_2_loss: 0.2577 - yolo_layer_3_loss: 5.6984
+
+Epoch 00024: loss improved from 6.35713 to 5.95620, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 25/200
+ - 249s - loss: 6.1448 - yolo_layer_1_loss: 1.2286e-04 - yolo_layer_2_loss: 0.6805 - yolo_layer_3_loss: 5.4642
+
+Epoch 00025: loss did not improve from 5.95620
+Epoch 26/200
+ - 249s - loss: 5.9585 - yolo_layer_1_loss: 1.0858e-04 - yolo_layer_2_loss: 0.4485 - yolo_layer_3_loss: 5.5098
+
+Epoch 00026: loss did not improve from 5.95620
+Epoch 27/200
+ - 249s - loss: 6.1453 - yolo_layer_1_loss: 9.7766e-05 - yolo_layer_2_loss: 0.5231 - yolo_layer_3_loss: 5.6221
+
+Epoch 00027: loss did not improve from 5.95620
+Epoch 28/200
+ - 249s - loss: 5.6772 - yolo_layer_1_loss: 1.9072e-04 - yolo_layer_2_loss: 0.2765 - yolo_layer_3_loss: 5.4006
+
+Epoch 00028: loss improved from 5.95620 to 5.67724, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 29/200
+ - 249s - loss: 5.3301 - yolo_layer_1_loss: 1.0635e-04 - yolo_layer_2_loss: 8.7561e-04 - yolo_layer_3_loss: 5.3291
+
+Epoch 00029: loss improved from 5.67724 to 5.33012, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 30/200
+ - 249s - loss: 6.8329 - yolo_layer_1_loss: 1.4615e-04 - yolo_layer_2_loss: 1.5756 - yolo_layer_3_loss: 5.2572
+
+Epoch 00030: loss did not improve from 5.33012
+Epoch 31/200
+ - 249s - loss: 5.9033 - yolo_layer_1_loss: 1.9254e-04 - yolo_layer_2_loss: 0.8525 - yolo_layer_3_loss: 5.0506
+
+Epoch 00031: loss did not improve from 5.33012
+Epoch 32/200
+ - 249s - loss: 5.2796 - yolo_layer_1_loss: 1.4435e-04 - yolo_layer_2_loss: 0.2685 - yolo_layer_3_loss: 5.0109
+
+Epoch 00032: loss improved from 5.33012 to 5.27958, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 33/200
+ - 249s - loss: 6.2346 - yolo_layer_1_loss: 6.7379e-05 - yolo_layer_2_loss: 1.3654 - yolo_layer_3_loss: 4.8691
+
+Epoch 00033: loss did not improve from 5.27958
+Epoch 34/200
+ - 249s - loss: 6.1787 - yolo_layer_1_loss: 6.0842e-05 - yolo_layer_2_loss: 0.6770 - yolo_layer_3_loss: 5.5016
+
+Epoch 00034: loss did not improve from 5.27958
+Epoch 35/200
+ - 249s - loss: 5.2614 - yolo_layer_1_loss: 6.5419e-05 - yolo_layer_2_loss: 0.1292 - yolo_layer_3_loss: 5.1321
+
+Epoch 00035: loss improved from 5.27958 to 5.26138, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 36/200
+ - 249s - loss: 5.2841 - yolo_layer_1_loss: 2.1123e-04 - yolo_layer_2_loss: 0.1537 - yolo_layer_3_loss: 5.1302
+
+Epoch 00036: loss did not improve from 5.26138
+Epoch 37/200
+ - 250s - loss: 5.5240 - yolo_layer_1_loss: 3.0572e-04 - yolo_layer_2_loss: 0.5670 - yolo_layer_3_loss: 4.9567
+
+Epoch 00037: loss did not improve from 5.26138
+Epoch 38/200
+ - 250s - loss: 5.7255 - yolo_layer_1_loss: 1.5723e-04 - yolo_layer_2_loss: 0.6625 - yolo_layer_3_loss: 5.0628
+
+Epoch 00038: loss did not improve from 5.26138
+Epoch 39/200
+ - 249s - loss: 6.1184 - yolo_layer_1_loss: 1.5941e-04 - yolo_layer_2_loss: 0.7594 - yolo_layer_3_loss: 5.3588
+
+Epoch 00039: loss did not improve from 5.26138
+Epoch 40/200
+ - 250s - loss: 6.0649 - yolo_layer_1_loss: 1.6101e-04 - yolo_layer_2_loss: 0.6664 - yolo_layer_3_loss: 5.3983
+
+Epoch 00040: loss did not improve from 5.26138
+Epoch 41/200
+ - 249s - loss: 7.6413 - yolo_layer_1_loss: 1.6196e-04 - yolo_layer_2_loss: 2.1583 - yolo_layer_3_loss: 5.4829
+
+Epoch 00041: loss did not improve from 5.26138
+Epoch 42/200
+ - 249s - loss: 6.7180 - yolo_layer_1_loss: 1.1377e-04 - yolo_layer_2_loss: 1.2027 - yolo_layer_3_loss: 5.5152
+
+Epoch 00042: loss did not improve from 5.26138
+Epoch 43/200
+ - 250s - loss: 5.6705 - yolo_layer_1_loss: 9.3619e-05 - yolo_layer_2_loss: 0.7231 - yolo_layer_3_loss: 4.9473
+
+Epoch 00043: loss did not improve from 5.26138
+Epoch 44/200
+ - 249s - loss: 6.2414 - yolo_layer_1_loss: 1.0592e-04 - yolo_layer_2_loss: 0.6340 - yolo_layer_3_loss: 5.6073
+
+Epoch 00044: loss did not improve from 5.26138
+Epoch 45/200
+ - 249s - loss: 5.8108 - yolo_layer_1_loss: 5.7582e-05 - yolo_layer_2_loss: 0.6373 - yolo_layer_3_loss: 5.1734
+
+Epoch 00045: loss did not improve from 5.26138
+Epoch 46/200
+ - 249s - loss: 6.9616 - yolo_layer_1_loss: 9.3750e-05 - yolo_layer_2_loss: 0.8949 - yolo_layer_3_loss: 6.0666
+
+Epoch 00046: loss did not improve from 5.26138
+Epoch 47/200
+ - 249s - loss: 5.3763 - yolo_layer_1_loss: 8.0919e-05 - yolo_layer_2_loss: 0.2562 - yolo_layer_3_loss: 5.1200
+
+Epoch 00047: loss did not improve from 5.26138
+Epoch 48/200
+ - 249s - loss: 5.4027 - yolo_layer_1_loss: 5.5944e-05 - yolo_layer_2_loss: 0.6505 - yolo_layer_3_loss: 4.7521
+
+Epoch 00048: loss did not improve from 5.26138
+Epoch 49/200
+ - 249s - loss: 5.4222 - yolo_layer_1_loss: 5.0298e-05 - yolo_layer_2_loss: 0.5950 - yolo_layer_3_loss: 4.8272
+
+Epoch 00049: loss did not improve from 5.26138
+Epoch 50/200
+ - 249s - loss: 5.5717 - yolo_layer_1_loss: 5.9565e-05 - yolo_layer_2_loss: 0.1377 - yolo_layer_3_loss: 5.4340
+
+Epoch 00050: loss did not improve from 5.26138
+
+Epoch 00050: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Epoch 51/200
+ - 249s - loss: 5.9566 - yolo_layer_1_loss: 6.9738e-05 - yolo_layer_2_loss: 0.4066 - yolo_layer_3_loss: 5.5499
+
+Epoch 00051: loss did not improve from 5.26138
+Epoch 52/200
+ - 249s - loss: 4.5897 - yolo_layer_1_loss: 5.2179e-05 - yolo_layer_2_loss: 0.4062 - yolo_layer_3_loss: 4.1835
+
+Epoch 00052: loss improved from 5.26138 to 4.58969, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 53/200
+ - 249s - loss: 4.8618 - yolo_layer_1_loss: 5.1721e-05 - yolo_layer_2_loss: 0.5580 - yolo_layer_3_loss: 4.3037
+
+Epoch 00053: loss did not improve from 4.58969
+Epoch 54/200
+ - 249s - loss: 4.8267 - yolo_layer_1_loss: 5.7835e-05 - yolo_layer_2_loss: 0.3104 - yolo_layer_3_loss: 4.5163
+
+Epoch 00054: loss did not improve from 4.58969
+Epoch 55/200
+ - 249s - loss: 5.7597 - yolo_layer_1_loss: 7.0499e-05 - yolo_layer_2_loss: 0.8402 - yolo_layer_3_loss: 4.9194
+
+Epoch 00055: loss did not improve from 4.58969
+Epoch 56/200
+ - 249s - loss: 4.5171 - yolo_layer_1_loss: 4.7918e-05 - yolo_layer_2_loss: 0.6464 - yolo_layer_3_loss: 3.8707
+
+Epoch 00056: loss improved from 4.58969 to 4.51712, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 57/200
+ - 249s - loss: 4.8879 - yolo_layer_1_loss: 4.4887e-05 - yolo_layer_2_loss: 0.3918 - yolo_layer_3_loss: 4.4960
+
+Epoch 00057: loss did not improve from 4.51712
+Epoch 58/200
+ - 250s - loss: 4.6380 - yolo_layer_1_loss: 4.3016e-05 - yolo_layer_2_loss: 0.4356 - yolo_layer_3_loss: 4.2024
+
+Epoch 00058: loss did not improve from 4.51712
+Epoch 59/200
+ - 249s - loss: 5.1633 - yolo_layer_1_loss: 3.9667e-05 - yolo_layer_2_loss: 0.7258 - yolo_layer_3_loss: 4.4374
+
+Epoch 00059: loss did not improve from 4.51712
+Epoch 60/200
+ - 249s - loss: 4.8450 - yolo_layer_1_loss: 4.7864e-05 - yolo_layer_2_loss: 0.8874 - yolo_layer_3_loss: 3.9576
+
+Epoch 00060: loss did not improve from 4.51712
+Epoch 61/200
+ - 249s - loss: 4.7428 - yolo_layer_1_loss: 4.3229e-05 - yolo_layer_2_loss: 0.2623 - yolo_layer_3_loss: 4.4805
+
+Epoch 00061: loss did not improve from 4.51712
+Epoch 62/200
+ - 249s - loss: 5.4766 - yolo_layer_1_loss: 4.1361e-05 - yolo_layer_2_loss: 0.9122 - yolo_layer_3_loss: 4.5644
+
+Epoch 00062: loss did not improve from 4.51712
+Epoch 63/200
+ - 249s - loss: 4.2940 - yolo_layer_1_loss: 4.3164e-05 - yolo_layer_2_loss: 0.5223 - yolo_layer_3_loss: 3.7716
+
+Epoch 00063: loss improved from 4.51712 to 4.29402, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 64/200
+ - 249s - loss: 4.6400 - yolo_layer_1_loss: 5.8545e-05 - yolo_layer_2_loss: 0.6264 - yolo_layer_3_loss: 4.0135
+
+Epoch 00064: loss did not improve from 4.29402
+Epoch 65/200
+ - 249s - loss: 4.5991 - yolo_layer_1_loss: 5.0934e-05 - yolo_layer_2_loss: 0.4342 - yolo_layer_3_loss: 4.1649
+
+Epoch 00065: loss did not improve from 4.29402
+Epoch 66/200
+ - 249s - loss: 4.9235 - yolo_layer_1_loss: 5.6441e-05 - yolo_layer_2_loss: 0.9522 - yolo_layer_3_loss: 3.9712
+
+Epoch 00066: loss did not improve from 4.29402
+Epoch 67/200
+ - 249s - loss: 5.0479 - yolo_layer_1_loss: 5.0447e-05 - yolo_layer_2_loss: 0.9907 - yolo_layer_3_loss: 4.0571
+
+Epoch 00067: loss did not improve from 4.29402
+Epoch 68/200
+ - 250s - loss: 4.8168 - yolo_layer_1_loss: 4.6199e-05 - yolo_layer_2_loss: 1.1044 - yolo_layer_3_loss: 3.7123
+
+Epoch 00068: loss did not improve from 4.29402
+Epoch 69/200
+ - 249s - loss: 4.5846 - yolo_layer_1_loss: 4.9725e-05 - yolo_layer_2_loss: 0.2604 - yolo_layer_3_loss: 4.3242
+
+Epoch 00069: loss did not improve from 4.29402
+Epoch 70/200
+ - 249s - loss: 5.3970 - yolo_layer_1_loss: 3.2394e-05 - yolo_layer_2_loss: 0.7830 - yolo_layer_3_loss: 4.6140
+
+Epoch 00070: loss did not improve from 4.29402
+Epoch 71/200
+ - 249s - loss: 4.5713 - yolo_layer_1_loss: 3.9810e-05 - yolo_layer_2_loss: 0.4039 - yolo_layer_3_loss: 4.1674
+
+Epoch 00071: loss did not improve from 4.29402
+Epoch 72/200
+ - 249s - loss: 3.8602 - yolo_layer_1_loss: 3.7398e-05 - yolo_layer_2_loss: 0.7578 - yolo_layer_3_loss: 3.1023
+
+Epoch 00072: loss improved from 4.29402 to 3.86019, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+Epoch 73/200
+ - 249s - loss: 4.2252 - yolo_layer_1_loss: 3.9543e-05 - yolo_layer_2_loss: 0.1264 - yolo_layer_3_loss: 4.0988
+
+Epoch 00073: loss did not improve from 3.86019
+Epoch 74/200
+ - 249s - loss: 4.4763 - yolo_layer_1_loss: 3.6080e-05 - yolo_layer_2_loss: 0.5650 - yolo_layer_3_loss: 3.9113
+
+Epoch 00074: loss did not improve from 3.86019
+Epoch 75/200
+ - 249s - loss: 3.5016 - yolo_layer_1_loss: 3.7154e-05 - yolo_layer_2_loss: 0.6020 - yolo_layer_3_loss: 2.8996
+
+Epoch 00075: loss improved from 3.86019 to 3.50156, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+
+Epoch 00076: loss improved from 3.50156 to 4.22446, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+40/40 - 183s - loss: 4.2245 - yolo_layer_loss: 6.4795e-05 - yolo_layer_1_loss: 0.6512 - yolo_layer_2_loss: 3.5732 - val_loss: 6.4259 - val_yolo_layer_loss: 6.5558e-05 - val_yolo_layer_1_loss: 1.3530 - val_yolo_layer_2_loss: 5.0729
+Epoch 2/5
+
+Epoch 00077: loss did not improve from 4.22446
+40/40 - 186s - loss: 4.8331 - yolo_layer_loss: 4.1540e-05 - yolo_layer_1_loss: 1.0007 - yolo_layer_2_loss: 3.8323 - val_loss: 4.9868 - val_yolo_layer_loss: 2.5803e-05 - val_yolo_layer_1_loss: 1.2658e-04 - val_yolo_layer_2_loss: 4.9867
+Epoch 3/5
+
+Epoch 00078: loss did not improve from 4.22446
+40/40 - 187s - loss: 4.3298 - yolo_layer_loss: 8.7633e-06 - yolo_layer_1_loss: 0.6481 - yolo_layer_2_loss: 3.6816 - val_loss: 6.7895 - val_yolo_layer_loss: 8.8222e-06 - val_yolo_layer_1_loss: 0.5092 - val_yolo_layer_2_loss: 6.2803
+Epoch 4/5
+
+Epoch 00079: loss did not improve from 4.22446
+40/40 - 185s - loss: 4.6490 - yolo_layer_loss: 6.7689e-06 - yolo_layer_1_loss: 0.8990 - yolo_layer_2_loss: 3.7501 - val_loss: 5.3483 - val_yolo_layer_loss: 6.3485e-06 - val_yolo_layer_1_loss: 9.0986e-05 - val_yolo_layer_2_loss: 5.3482
+Epoch 5/5
+
+Epoch 00080: loss improved from 4.22446 to 3.98889, saving model to Result_yolo3_fault_2/yolo3_full_fault_2.h5
+40/40 - 193s - loss: 3.9889 - yolo_layer_loss: 5.2988e-06 - yolo_layer_1_loss: 0.6052 - yolo_layer_2_loss: 3.3837 - val_loss: 6.2318 - val_yolo_layer_loss: 4.7080e-06 - val_yolo_layer_1_loss: 6.1751e-05 - val_yolo_layer_2_loss: 6.2318
+35 instances of class 2 with average precision: 0.7193
+mAP using the weighted average of precisions among classes: 0.7193
+mAP: 0.7193
