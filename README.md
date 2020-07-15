@@ -230,7 +230,7 @@ All of weights of this trained model grab from [Drive_Weights](https://drive.goo
 |   YOLO3 Affected Cell    |      [weight](https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
 
 The image used are specified in [Table images](Training_Images.xlsx).
-You can see some examples in [Summary of results] (README_Result.md).
+You can see some examples in [Summary of results](README_Result.md).
 
 # Contributing
 
