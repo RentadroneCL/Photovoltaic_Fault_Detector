@@ -6,7 +6,7 @@
 [Rentadrone.cl](https://rentadronecl.github.io)
 
 ## Summary
-Model-definition is a deep learning application for fault detection in photovoltaic plants. In this repository you will find trained detection models that point out where the panel faults are by using radiometric thermal infrared pictures.
+Model-definition is a deep learning application for fault detection in photovoltaic plants. In this repository you will find trained detection models that point out where the panel faults are by using radiometric thermal infrared pictures. In [Web-API](https://github.com/RentadroneCL/Web-API) contains a performant, production-ready reference implementation of this repository.
 
 ## To do list:
 - [x] Import model detection (SSD & YOLO3)
