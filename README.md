@@ -1,14 +1,19 @@
 
 # Photovoltaic Fault Detector
 
+[![License](https://poser.pugx.org/composer/spdx-licenses/license)](https://packagist.org/packages/composer/spdx-licenses)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 [Rentadrone.cl](https://rentadronecl.github.io)
 
 ## Summary
+
 Model-definition is a deep learning application for fault detection in photovoltaic plants. In this repository you will find trained detection models that point out where the panel faults are by using radiometric thermal infrared pictures. In [Web-API](https://github.com/RentadroneCL/Web-API) contains a performant, production-ready reference implementation of this repository.
 
+![Data Flow](MLDataFlow.svg)
+
 ## To do list:
+
 - [x] Import model detection (SSD & YOLO3)
 - [x] Example use Trained Model
 - [x] Train and Evaluate Model with own data
@@ -18,9 +23,6 @@ Model-definition is a deep learning application for fault detection in photovolt
 - [x] Model Diode Fault  Detection (YOLO3)
 - [x] Model Other Fault  Detection
 - [x] Model Fault Panel Disconnect
-
-
-
 
 ## Requirements
 
