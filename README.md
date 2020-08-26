@@ -49,11 +49,11 @@ pip install notebook
 ```
 
 ## Example to use trained model
-In ['Example_Prediction'](Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
+In ['Example_Prediction'](Code_Example/Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
 
-In ['Example Prediction AllInOne'](Example%20Detection%20AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
+In ['Example Prediction AllInOne'](Code_Example/Example%20Detection%20AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
 
-In ['Example_Prediction_Orthophoto'](Example_prediction_Ortofoto.ipynb) this is the example of how implement all trained model, you can use this code for predict a Orthophot and have a output image with detection boxes.
+In ['Example_Prediction_Orthophoto'](Code_Example/Example_prediction_Ortofoto.ipynb) this is the example of how implement all trained model, you can use this code for predict a Orthophot and have a output image with detection boxes.
 
 
 ## Developers
