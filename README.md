@@ -263,5 +263,5 @@ Before sending your pull requests, make sure you followed this list.
 
 # Example to use trained model
 
-In ['Example_Prediction'](Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
-In ['Example_Prediction_AllInOne'](Example Detection AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
+In ['Example_Prediction'](Code_Example/Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
+In ['Example_Prediction_AllInOne'](Code_Example/Example Detection AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
