@@ -1,21 +1,30 @@
 
-# Rentadrone_MachineLearning  Photovoltaic fault detector
+# Photovoltaic Fault Detector
 
+[![License](https://poser.pugx.org/composer/spdx-licenses/license)](https://packagist.org/packages/composer/spdx-licenses)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
+[Rentadrone.cl](https://rentadronecl.github.io)
+
+## Summary
+
+Model-definition is a deep learning application for fault detection in photovoltaic plants. In this repository you will find trained detection models that point out where the panel faults are by using radiometric thermal infrared pictures. In [Web-API](https://github.com/RentadroneCL/Web-API) contains a performant, production-ready reference implementation of this repository.
+
+![Data Flow](MLDataFlow.svg)
 
 ## To do list:
+
 - [x] Import model detection (SSD & YOLO3)
+- [x] Example use Trained Model
+- [x] Train and Evaluate Model with own data
 - [x] Model Panel Detection (SSD7)
 - [x] Model Panel Detection (YOLO3)
 - [x] Model Soiling Fault Detection (YOLO3)
 - [x] Model Diode Fault  Detection (YOLO3)
-- [ ] Model Other Fault  Detection
+- [x] Model Other Fault  Detection
 - [x] Model Fault Panel Disconnect
-- [x] Example use Trained Model
 
-
-
-## Dependencies
+## Requirements
 
 * Python 3.x
 * Numpy
@@ -24,7 +33,39 @@
 * OpenCV
 * Beautiful Soup 4.x
 
-## Model Detection
+## Quickstart
+In the root project execute the following command to install all dependencies project
+
+```
+pip install -r requirements.txt
+
+```
+You need install Jupyter notebook to see the code example. You can find the installation documentation for the [Jupyter platform, on ReadTheDocs](https://jupyter.readthedocs.io/en/latest/install.html) or in github page [here](https://github.com/jupyter/notebook).
+
+For a local installation, make sure you have pip installed and run:
+```
+pip install notebook
+
+```
+
+## Example to use trained model
+In ['Example_Prediction'](Code_Example/Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
+
+In ['Example Prediction AllInOne'](Code_Example/Example%20Detection%20AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
+
+In ['Example_Prediction_Orthophoto'](Code_Example/Example_prediction_Ortofoto.ipynb) this is the example of how implement all trained model, you can use this code for predict a Orthophot and have a output image with detection boxes.
+
+
+## Developers
+Help improve our software! We welcome contributions from everyone, whether to add new features, improve speed, fix existing bugs or add support. [Check our code of conduct](CODE_OF_CONDUCT.md), [the contributing guidelines](CONTRIBUTING.md) and how decisions are made.
+
+Any code contributions are welcomed as long as they are discussed in [Github Issues](https://github.com/RentadroneCL/model-definition/issues) with maintainers. Be aware that if you decide to change something and submit a PR on your own, it may not be accepted.
+
+#### Creating an issue
+You can open a new issue based on code from an existing pull request. For more information, see [the template for filling issues](https://github.com/RentadroneCL/model-definition/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)
+
+
+# Model Detection
 The models used for detection are SSD [SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325) and YOLOv3 [YOLOv3: An Incremental Improvement] (https://arxiv.org/abs/1804.02767), they are imported from the following repositories:
 * [SSD_Keras](https://github.com/pierluigiferrari/ssd_keras#how-to-fine-tune-one-of-the-trained-models-on-your-own-dataset)
 * [YOLOv3_Keras](https://github.com/experiencor/keras-yolo3)
@@ -35,6 +76,7 @@ Grab the pretrained weights of SSD and  YOLO3 from [Drive_Weights](https://drive
 |:-----------:|:-------------------:|
 | SSD7/SSD300 |    [Weight VGG16](https://drive.google.com/open?id=1VHTx28tGI94yFqwT_WHp-xkx_8Hh_A31)|
 |    YOLO3    | [Weight Full Yolo3](https://drive.google.com/open?id=1cnCQHl-TnOrwb-leug1I0O9vMBaSwJLt)|
+
 
 ## Type of Data
 The images used for the design of this model were extracted by air analysis, specifically: FLIR aerial radiometric thermal infrared pictures, taken by UAV (R-JPEG format). Which were converted into .jpg images for the training of these detection models.
@@ -180,7 +222,7 @@ The evaluation is integrated into the training process, if you want to do the in
 
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
-# Result
+# Weights of Trained Models
 All of weights of this trained model grab from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
 
 |      Model     |  Weights Trained |  Config  |
@@ -190,61 +232,10 @@ All of weights of this trained model grab from [Drive_Weights](https://drive.goo
 |   YOLO3 Panel  |      [weight](https://drive.google.com/open?id=14zgtgDJv3KTvhRC-VOz6sqsGPC_bdrL1)      | [config](config_full_yolo_panel_infer.json) |
 |  YOLO3 Soiling |      [weight](https://drive.google.com/open?id=1YLgkn1wL5xAGOpwd2gzdfsJVGYPzszn-)      | [config](config_full_yolo_fault_1_infer.json) |
 |   YOLO3 Diode  |      [weight](https://drive.google.com/open?id=1VUtrK9JVTbzBw5dX7_dgLTMToFHbAJl1)      | [config](config_full_yolo_fault_4_infer.json) |
-|   YOLO3 Affected Cell    |      [weight(https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
+|   YOLO3 Affected Cell    |      [weight](https://drive.google.com/open?id=1ngyCzw7xF0N5oZnF29EIS5LOl1PFkRRM)      | [config](config_full_yolo_fault_2_infer.json) |
 
-## Panel Detector
-### SDD7
-On folder [Result ssd7 panel](Result_ssd7_panel/) show code (jupyter notebook), weight and result of this model (mAP 89.8%).
-
-![](Result_ssd7_panel/result_ssd7_panel/DJI_0020.jpg)
-
-![](Result_ssd7_panel/result_ssd7_panel/DJI_0110.jpg)
-
-
-### YOLO3
-On folder [Result yolo3 panel](Result_yolo3_panel/)  weight and result of this model (mAP 86.3%).
-
-![](Result_yolo3_panel/Mision%203_DJI_0045.jpg)
-
-## Soiling Fault Detector
-### SSD300
-On folder [Result ssd300 fault 1](Result_ssd300_fault_1/) show code (jupyter notebook), weight and result of this model (mAP 79.5%).
-
-
-![](Result_ssd300_fault_1/result_ssd300_fault_1/Mision_11_DJI_0011.jpg)
-
-
-### YOLO3
-On folder [Result yolo3 fault 1](Result_yolo3_fault_1/) show [history train](Result_yolo3_fault_1/yolo3_full_yolo.output), weight and result of this model (mAP 73.02%).
-
-
-![](Result_yolo3_fault_1/result_yolo3_fault_1/Mision_11_DJI_0011.jpg)
-
-## Diode Affected Cell Detector
-### YOLO3
-On folder [Result yolo3 fault 2](Result_yolo3_fault_2/) show [history train](Result_yolo3_fault_2/yolo3_full_yolo.output), weight and result of this model (mAP 71.93%).
-
-![](Result_yolo3_fault_2/result_yolo3_fault_2/Mision%2010_DJI_0093.jpg)
-
-## Diode Fault Detector
-### YOLO3
-On folder [Result yolo3 fault 4](Result_yolo3_fault_4/) show [history train](Result_yolo3_fault_4/yolo3_full_yolo.output), weight and result of this model (mAP 66.22%).
-
-![](Result_yolo3_fault_4/result_yolo3_fault_4/Mision%2041_DJI_0044.jpg)
-
-
-
-
-## Panel Disconnect Detector
-### YOLO3
-To use the detector we must only use 'panel_yolo3_disconnect.py' with the previously established form, that is:
-`python predict_yolo3_disconnect.py -c config_full_yolo_panel_infer.json -i /path/to/image/ -o /path/output/result`
-To use this model, only the yolo3_panel detector model is needed.
-
-
-![](Result_yolo3_panel/Mision%2011_DJI_0058.jpg)
-
-The idea to detect the disconnection is by calculating the luminosity of each panel, to then normalize this data and highlight the panels with a luminosity out of normality.
+The image used are specified in [Table images](Training_Images.xlsx).
+You can see some examples in [Summary of results](README_Result.md).
 
 # Contributing
 
@@ -261,7 +252,3 @@ Before sending your pull requests, make sure you followed this list.
 - Run [Unit Tests](https://github.com/RentadroneCL/model-definition/CONTRIBUTING.md#running-unit-tests).
 
 
-# Example to use trained model
-
-In ['Example_Prediction'](Code_Example/Example_prediction.ipynb) this is the example of how to implement an already trained model, it can be modified to change the model you have to use and the image in which you want to detect faults.
-In ['Example_Prediction_AllInOne'](Code_Example/Example Detection AllInOne.ipynb) this is the example of how implement all trained model, you can use this code for predict a folder of images and have a output image with detection boxes.
