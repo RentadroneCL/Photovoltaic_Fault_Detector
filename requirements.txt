@@ -16,3 +16,4 @@ termcolor
 tqdm
 Werkzeug
 wrapt
+beautifulsoup4
