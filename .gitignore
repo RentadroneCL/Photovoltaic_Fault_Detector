@@ -21,6 +21,7 @@ Result_Complete/
 Result_Complete_Example/
 Problem_weights_saved.ipynb
 Train&Test_H/
+GPS_Panel/El_Aguila/
 
 *.h5
 *.tif
