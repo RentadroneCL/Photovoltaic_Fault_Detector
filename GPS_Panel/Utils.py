@@ -235,3 +235,70 @@ def rgb2hsv(rgb):
     hsv[..., 2] = maxv
 
     return hsv
+
+
+def doubleMADsfromMedian(y,thresh=3.5):
+    # warning: this function does not check for NAs
+    # nor does it address issues when 
+    # more than 50% of your data have identical values
+    m = np.median(y)
+    abs_dev = np.abs(y - m)
+    left_mad = np.median(abs_dev[y <= m])
+    right_mad = np.median(abs_dev[y >= m])
+    y_mad = left_mad * np.ones(len(y))
+    y_mad[y > m] = right_mad
+    modified_z_score = 0.6745 * abs_dev / y_mad
+    modified_z_score[y == m] = 0
+    return modified_z_score > thresh
+
+
+def watershed_marked(thresh, min_Area = 100, threshold_median_Area = 3):
+    ## Thresh is the segmentation image use to watershed
+    ##
+    
+    # Perform the distance transform algorithm
+    dist = cv2.distanceTransform(thresh, cv2.DIST_L2, 3)
+    # Normalize the distance image for range = {0.0, 1.0}
+    # so we can visualize and threshold it
+    cv2.normalize(dist, dist, 0, 1.0, cv2.NORM_MINMAX)
+    # Threshold to obtain the peaks
+    # This will be the markers for the foreground objects
+    _, dist = cv2.threshold((dist*255).astype(np.uint8), 0, 255 , cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    # Dilate a bit the dist image
+    kernel1 = np.ones((3,3), dtype=np.uint8)
+    dist = cv2.dilate(dist, kernel1 , iterations = 1)
+    dist = cv2.erode(dist, kernel1 , iterations = 1)
+
+
+    #dist[0: 10,-10:] = 255
+    dist[-10:,-10:] = 255
+
+    dist_8u = dist.astype('uint8')
+
+    # Find total markers
+    contours, _ = cv2.findContours(dist_8u, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    # Create the marker image for the watershed algorithm
+    markers = np.zeros(dist.shape, dtype=np.int32)
+    # Draw the foreground markers
+    for i in range(len(contours)):
+        cv2.drawContours(markers, contours, i, (i+1), -1)
+
+
+    markers = cv2.watershed(cv2.cvtColor(thresh,cv2.COLOR_GRAY2RGB), markers)
+    markers[markers == 1] = 0
+    markers[markers == -1] = 0
+
+    Areas = []
+    for i in range(1,np.max(markers) + 1):
+        if np.sum(markers == i) < min_Area:
+            markers[markers == i] = 0
+        else:
+            Areas.append([i, np.sum(markers == i)])
+
+    Areas = np.array(Areas)
+    L_Areas = doubleMADsfromMedian(Areas[:,1], threshold_median_Area)
+    for i,Logic in zip(Areas[:,0], L_Areas) :
+        if Logic:
+            markers[markers == i] = 0
+            
+    return Areas[L_Areas,:], dist_8u,markers
