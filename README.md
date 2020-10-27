@@ -7,6 +7,10 @@
 
 [Rentadrone.cl](https://rentadronecl.github.io)
 
+## Forum
+
+This project is part of the [UNICEF Innovation Fund Discourse community](https://unicef-if.discourse.group/c/projects/rentadrone/10). You can post comments or questions about each category of [Rentadrone Developers](https://rentadrone.cl/developers/) algorithms. We encourage users to participate in the forum and to engage with fellow users.
+
 ## Summary
 
 Model-definition is a deep learning application for fault detection in photovoltaic plants. In this repository you will find trained detection models that point out where the panel faults are by using radiometric thermal infrared pictures. In [Web-API](https://github.com/RentadroneCL/Web-API) contains a performant, production-ready reference implementation of this repository.
