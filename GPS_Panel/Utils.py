@@ -4,7 +4,7 @@ import cv2
 import matplotlib.pyplot as plt
 from scipy import ndimage
 from scipy import signal
-
+import georasters as gr
 
 
 def order_points_rect(pts):
@@ -302,3 +302,13 @@ def watershed_marked(thresh, min_Area = 100, threshold_median_Area = 3):
             markers[markers == i] = 0
             
     return Areas[L_Areas,:], dist_8u,markers
+
+def pixel2gps(points, geot):
+    # transform pixel to gps coordinate
+    return np.vstack(gr.map_pixel_inv(points[:,1], points[:,0],geot[1],geot[-1], geot[0],geot[3])).T
+
+    
+
+def gps2pixel(points_coord, geot):
+    # transform gps coordinate to pixel
+    return np.flip(np.vstack(gr.map_pixel(points_coord[:,0], points_coord[:,1],geot[1],geot[-1], geot[0],geot[3])).T,1)
