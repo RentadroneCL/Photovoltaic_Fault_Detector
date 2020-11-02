@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/RentadroneCL/Photovoltaic_Fault_Detector)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![Open Source Helpers](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector/badges/users.svg)](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector)
+[![Coverage Status](https://coveralls.io/repos/github/RentadroneCL/Photovoltaic_Fault_Detector/badge.svg)](https://coveralls.io/github/RentadroneCL/Photovoltaic_Fault_Detector)
 
 [Rentadrone.cl](https://rentadronecl.github.io)
 
