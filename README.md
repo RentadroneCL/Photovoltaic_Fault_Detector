@@ -224,7 +224,9 @@ It carries out detection on the image and write the image with detected bounding
 ## Evaluation
 The evaluation is integrated into the training process, if you want to do the independent evaluation you must go to the folder ssd_keras-master or keras-yolo3-master and use the following code
 
-`python evaluate.py -c config.json`
+`python evaluate.py -c config.json` 
+Example:
+`python keras-yolo3-master/evaluate.py -c config_full_yolo_fault_1_infer.json` 
 
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
