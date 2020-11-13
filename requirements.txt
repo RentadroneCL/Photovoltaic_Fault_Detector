@@ -11,7 +11,7 @@ protobuf
 PyYAML
 scipy
 six
-tensorflow==2.1
+tensorflow==2.3.1
 termcolor
 tqdm
 Werkzeug
