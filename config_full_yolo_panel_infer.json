@@ -33,16 +33,16 @@
     },
 
     "valid": {
-        "valid_image_folder":   "Train&Test_A/Test/images/",
-        "valid_annot_folder":   "Train&Test_A/Test/anns/",
-        "cache_name":           "Result_yolo3_panel/val_panel.pkl",
+        "valid_image_folder":   "Train&Test_A/Train/images/",
+        "valid_annot_folder":   "Train&Test_A/Train/anns/",
+        "cache_name":           "Result_yolo3_panel/val_panel_2.pkl",
 
         "valid_times":          1
     },
    "test": {
-        "test_image_folder":   "Train&Test_A/Test/images/",
-        "test_annot_folder":   "Train&Test_A/Test/anns/",
-        "cache_name":          "Result_yolo3_panel/test_panel.pkl",
+        "test_image_folder":   "Train&Test_A/Train/images/",
+        "test_annot_folder":   "Train&Test_A/Train/anns/",
+        "cache_name":          "Result_yolo3_panel/test_panel_2.pkl",
 
         "test_times":          1
     }
