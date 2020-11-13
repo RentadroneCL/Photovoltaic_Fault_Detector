@@ -223,6 +223,13 @@ The evaluation is integrated into the training process, if you want to do the in
 
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
+| Model |  mAP | Config |
+|:--------------:|:------------------:|
+| YOLO3 Soiling  | 0.7302 |[config](config_full_yolo_fault_1_infer.json) |
+|   YOLO3 Diode  | 0.6127 | [config](config_full_yolo_fault_4_infer.json) |
+|   YOLO3 Affected Cell  |  0.7230 | [config](config_full_yolo_fault_2_infer.json)|
+
+
 # Weights of Trained Models
 All of weights of this trained model grab from [Drive_Weights](https://drive.google.com/drive/folders/1LSc9FkAwJrAAT8pAUWz8aax_biFAMMXS?usp=sharing)
 

@@ -35,14 +35,14 @@
     "valid": {
         "valid_image_folder":   "Train&Test_D/Test/images/",
         "valid_annot_folder":   "Train&Test_D/Test/anns/",
-        "cache_name":           "Result_yolo3_fault_4/Result_yolo3_fault_4.pkl",
+        "cache_name":           "Result_yolo3_fault_4/Result_yolo3_fault_4_test.pkl",
 
         "valid_times":          1
     },
    "test": {
         "test_image_folder":   "Train&Test_D/Test/images/",
         "test_annot_folder":   "Train&Test_D/Test/anns/",
-        "cache_name":          "Result_yolo3_fault_4/Result_yolo3_fault_4.pkl",
+        "cache_name":          "Result_yolo3_fault_4/Result_yolo3_fault_4_test.pkl",
 
         "test_times":          1
     }
