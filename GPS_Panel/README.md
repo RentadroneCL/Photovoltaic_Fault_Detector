@@ -8,6 +8,7 @@ In the root project execute the following command to install all dependencies pr
 
 ```
 pip install -r requirements.txt
+```
 
 ## Example
 
