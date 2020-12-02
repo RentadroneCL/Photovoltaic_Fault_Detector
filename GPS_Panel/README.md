@@ -8,15 +8,15 @@ In the root project execute the following command to install all dependencies pr
 
 ```
 pip install -r requirements.txt
+```
 
 ## Example
 
 View example 
-
 ```
 Enumeration_KML.ipynb
-
 ```
+
 # Panel Classifier
 This algorithm uses the division of the panels to classify them individually if they are with any fault.
 
@@ -39,4 +39,7 @@ ClassifierPanel_KML.ipynb
 |----------|-----------|--------|----------|---------|----------|
 | 0-Normal | 0.95      | 0.97   | 0.96     | 1688    |          |
 | 1-Falla  | 0.97      | 0.96   | 0.96     | 2084    | 0.96     |
+
+
+
 

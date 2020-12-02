@@ -4,8 +4,13 @@
 ![GitHub](https://img.shields.io/github/license/RentadroneCL/Photovoltaic_Fault_Detector)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![Open Source Helpers](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector/badges/users.svg)](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector)
+[![Coverage Status](https://coveralls.io/repos/github/RentadroneCL/Photovoltaic_Fault_Detector/badge.svg)](https://coveralls.io/github/RentadroneCL/Photovoltaic_Fault_Detector)
 
 [Rentadrone.cl](https://rentadronecl.github.io)
+
+## Forum
+
+This project is part of the [UNICEF Innovation Fund Discourse community](https://unicef-if.discourse.group/c/projects/rentadrone/10). You can post comments or questions about each category of [Rentadrone Developers](https://rentadrone.cl/developers/) algorithms. We encourage users to participate in the forum and to engage with fellow users.
 
 ## Summary
 
@@ -219,15 +224,17 @@ It carries out detection on the image and write the image with detected bounding
 ## Evaluation
 The evaluation is integrated into the training process, if you want to do the independent evaluation you must go to the folder ssd_keras-master or keras-yolo3-master and use the following code
 
-`python evaluate.py -c config.json`
+`python evaluate.py -c config.json` 
+Example:
+`python keras-yolo3-master/evaluate.py -c config_full_yolo_fault_1_infer.json` 
 
 Compute the mAP performance of the model defined in `saved_weights_name` on the validation dataset defined in `valid_image_folder` and `valid_annot_folder`.
 
-| Model |  mAP | Config |
-|:--------------:|:------------------:|
-| YOLO3 Soiling  | 0.7302 |[config](config_full_yolo_fault_1_infer.json) |
-|   YOLO3 Diode  | 0.6127 | [config](config_full_yolo_fault_4_infer.json) |
-|   YOLO3 Affected Cell  |  0.7230 | [config](config_full_yolo_fault_2_infer.json)|
+| Model 	 	|  mAP 		     | Config |
+|:--------------:	|:------------------:|:------------------:|
+| YOLO3 Soiling  	| 0.7302 	     |[config](config_full_yolo_fault_1_infer.json) |
+|   YOLO3 Diode  	| 0.6127             | [config](config_full_yolo_fault_4_infer.json)|
+|   YOLO3 Affected Cell |  0.7230            | [config](config_full_yolo_fault_2_infer.json)|
 
 
 # Weights of Trained Models
