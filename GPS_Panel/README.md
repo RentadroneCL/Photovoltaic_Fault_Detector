@@ -22,7 +22,7 @@ This algorithm uses the division of the panels to classify them individually if 
 
 ## Train Model 
 In the Classifier folder there is the training of the model 
-[Train_Classifier_DEEP_SVC](Train_Classifier_DEEP_SVC.ipynb)
+[Train_Classifier_DEEP_SVC](Classifier/Train_Classifier_DEEP_SVC.ipynb)
 which is based on the union of a deep learning model pre-trained with Imagenet together with an SVM model.
 
 ## Example
