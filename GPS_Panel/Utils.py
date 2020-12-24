@@ -239,7 +239,7 @@ def rgb2hsv(rgb):
 
 def doubleMADsfromMedian(y,thresh=3.5):
     # warning: this function does not check for NAs
-    # nor does it address issues when 
+    # nor does it address issues when
     # more than 50% of your data have identical values
     m = np.median(y)
     abs_dev = np.abs(y - m)
@@ -255,7 +255,7 @@ def doubleMADsfromMedian(y,thresh=3.5):
 def watershed_marked(thresh, min_Area = 100, threshold_median_Area = 3):
     ## Thresh is the segmentation image use to watershed
     ##
-    
+
     # Perform the distance transform algorithm
     dist = cv2.distanceTransform(thresh, cv2.DIST_L2, 3)
     # Normalize the distance image for range = {0.0, 1.0}
@@ -300,14 +300,14 @@ def watershed_marked(thresh, min_Area = 100, threshold_median_Area = 3):
     for i,Logic in zip(Areas[:,0], L_Areas) :
         if Logic:
             markers[markers == i] = 0
-            
+
     return Areas[L_Areas,:], dist_8u,markers
 
 def pixel2gps(points, geot):
     # transform pixel to gps coordinate
     return np.vstack(gr.map_pixel_inv(points[:,1], points[:,0],geot[1],geot[-1], geot[0],geot[3])).T
 
-    
+
 
 def gps2pixel(points_coord, geot):
     # transform gps coordinate to pixel
