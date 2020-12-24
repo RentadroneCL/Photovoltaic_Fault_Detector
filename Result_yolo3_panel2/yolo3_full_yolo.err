@@ -1,0 +1,29 @@
+2020-12-14 22:27:04.267611: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory
+2020-12-14 22:27:04.267749: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory
+2020-12-14 22:27:04.267767: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-12-14 22:27:05.268036: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2020-12-14 22:27:05.268076: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
+2020-12-14 22:27:05.268102: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (dlsaavedra-X406UAR): /proc/driver/nvidia/version does not exist
+2020-12-14 22:27:05.268334: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-12-14 22:27:05.311492: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1800000000 Hz
+2020-12-14 22:27:05.313101: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55f4be3033d0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-12-14 22:27:05.313143: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+WARNING:tensorflow:AutoGraph could not transform <bound method YoloLayer.call of <yolo.YoloLayer object at 0x7fb92423a8d0>> and will run it as-is.
+Please report this to the TensorFlow team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output.
+Cause: unexpected indent (<unknown>, line 144)
+WARNING:tensorflow:AutoGraph could not transform <bound method YoloLayer.call of <yolo.YoloLayer object at 0x7fb904726710>> and will run it as-is.
+Please report this to the TensorFlow team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output.
+Cause: unexpected indent (<unknown>, line 144)
+WARNING:tensorflow:AutoGraph could not transform <bound method YoloLayer.call of <yolo.YoloLayer object at 0x7fb9044f2c10>> and will run it as-is.
+Please report this to the TensorFlow team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output.
+Cause: unexpected indent (<unknown>, line 144)
+WARNING:tensorflow:ModelCheckpoint mode 1 is unknown, fallback to auto mode.
+WARNING:tensorflow:Model failed to serialize as JSON. Ignoring... Layers with arguments in `__init__` must override `get_config`.
+2020-12-14 22:27:16.470550: I tensorflow/core/profiler/lib/profiler_session.cc:225] Profiler session started.
+2020-12-14 22:27:16.470928: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcupti.so.10.1'; dlerror: libcupti.so.10.1: cannot open shared object file: No such file or directory
+2020-12-14 22:27:16.470972: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1307] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2020-12-14 22:27:16.470988: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1346] function cupti_interface_->ActivityRegisterCallbacks( AllocCuptiActivityBuffer, FreeCuptiActivityBuffer)failed with error CUPTI could not be loaded or symbol could not be found.
+2020-12-14 22:27:20.300351: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1329] function cupti_interface_->EnableCallback( 0 , subscriber_, CUPTI_CB_DOMAIN_DRIVER_API, cbid)failed with error CUPTI could not be loaded or symbol could not be found.
+2020-12-14 22:27:20.300441: I tensorflow/core/profiler/internal/gpu/device_tracer.cc:88]  GpuTracer has collected 0 callback api events and 0 activity events.
+2020-12-14 22:28:18.604124: W tensorflow/core/kernels/data/generator_dataset_op.cc:103] Error occurred when finalizing GeneratorDataset iterator: Cancelled: Operation was cancelled
+2020-12-14 22:29:29.713989: W tensorflow/core/kernels/data/generator_dataset_op.cc:103] Error occurred when finalizing GeneratorDataset iterator: Cancelled: Operation was cancelled

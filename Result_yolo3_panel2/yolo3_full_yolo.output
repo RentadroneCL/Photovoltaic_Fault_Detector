@@ -1,0 +1,22 @@
+Seen labels: 	{'panel': 854}
+
+Given labels: 	['panel']
+
+Training on: 	['panel']
+
+multi_gpu:1
+
+Loading pretrained weights.
+
+Train for 12 steps, validate for 1 steps
+Epoch 1/2
+
+Epoch 00001: loss improved from inf to 40.76296, saving model to Result_yolo3_panel2/yolo3_full_panel.h5
+12/12 - 68s - loss: 40.7630 - yolo_layer_loss: 12.8884 - yolo_layer_1_loss: 27.8505 - yolo_layer_2_loss: 0.0241 - val_loss: 3793.7336 - val_yolo_layer_loss: 1322.7670 - val_yolo_layer_1_loss: 2470.9607 - val_yolo_layer_2_loss: 0.0060
+Epoch 2/2
+
+Epoch 00002: loss did not improve from 40.76296
+12/12 - 71s - loss: 46.9910 - yolo_layer_loss: 20.9780 - yolo_layer_1_loss: 26.0097 - yolo_layer_2_loss: 0.0033 - val_loss: 72523.8125 - val_yolo_layer_loss: 4534.5332 - val_yolo_layer_1_loss: 67989.2812 - val_yolo_layer_2_loss: 0.0000e+00
+94 instances of class panel with average precision: 0.0000
+mAP using the weighted average of precisions among classes: 0.0000
+mAP: 0.0000

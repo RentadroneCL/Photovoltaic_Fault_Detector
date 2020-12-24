@@ -1,0 +1,49 @@
+{
+    "model" : {
+        "min_input_size":       400,
+        "max_input_size":       400,
+        "anchors":              [0,0, 0,0, 0,0, 4,175, 4,92, 5,92, 6,190, 7,87, 30,5],
+        "labels":               ["panel"],
+	"backend": 		"keras-yolo3-master/full_yolo_backend.h5"
+    },
+
+    "train": {
+        "train_image_folder":   "Train&Test_A2/Train/images/",
+        "train_annot_folder":   "Train&Test_A2/Train/anns/",
+	"cache_name":           "Result_yolo3_panel2/train_panel.pkl",
+
+        "train_times":          3,
+
+        "batch_size":           2,
+        "learning_rate":        1e-3,
+        "nb_epochs":            2,
+        "warmup_epochs":        15,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+	"grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+	"tensorboard_dir":      "Result_yolo3_panel2/log_experimento_panel_gpu",
+	"saved_weights_name":   "Result_yolo3_panel2/yolo3_full_panel.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "Train&Test_A2/Test/images/",
+        "valid_annot_folder":   "Train&Test_A2/Test/anns/",
+        "cache_name":           "Result_yolo3_panel2/val_panel.pkl",
+
+        "valid_times":          1
+    },
+   "test": {
+        "test_image_folder":   "Train&Test_A2/Test/images/",
+        "test_annot_folder":   "Train&Test_A2/Test/anns/",
+        "cache_name":          "Result_yolo3_panel2/test_panel.pkl",
+
+        "test_times":          1
+    }
+}
