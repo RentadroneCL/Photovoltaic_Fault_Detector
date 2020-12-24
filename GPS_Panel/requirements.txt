@@ -9,5 +9,8 @@ matplotlib==3.2.2
 scipy==1.4.1
 ipython==7.19.0
 scikit_learn==0.23.2
-skimage==0.0
-
+geopandas
+rtree==0.9.3
+simplekml
+urbanaccess pandana  
+cenpy 
