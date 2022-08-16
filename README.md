@@ -209,7 +209,7 @@ The configuration file for SSD300 is a json file, which looks like this  (exampl
 `python train_ssd.py -c config.json -o /path/to/result`
 
 or
-`python train_ssd.py -c config.json -o /path/to/result`
+`python train_yolo.py -c config.json -o /path/to/result`
 
 By the end of this process, the code will write the weights of the best model to file best_weights.h5 (or whatever name specified in the setting "saved_weights_name" in the config.json file). The training process stops when the loss on the validation set is not improved in 20 consecutive epoches.
 
