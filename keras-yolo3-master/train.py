@@ -274,8 +274,8 @@ def _main_(args):
 
 
     # make a GPU version of infer_model for evaluation
-    #if multi_gpu > 1:
-    #    infer_model = load_model(config['train']['saved_weights_name'])
+    if multi_gpu > 1:
+        infer_model = load_model(config['train']['saved_weights_name'])
     infer_model.load_weights(config['train']['saved_weights_name'])
     infer_model.save(config['train']['saved_weights_name'])
     ###############################
