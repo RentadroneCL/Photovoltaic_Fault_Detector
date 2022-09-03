@@ -3,7 +3,6 @@ astor
 gast==0.2.2
 grpcio
 h5py
-ipython==7.31.1
 Markdown
 numpy==1.22
 opencv-contrib-python
