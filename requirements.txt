@@ -4,7 +4,7 @@ gast==0.2.2
 grpcio
 h5py
 Markdown
-numpy
+numpy==1.22
 opencv-contrib-python
 opt-einsum
 protobuf
