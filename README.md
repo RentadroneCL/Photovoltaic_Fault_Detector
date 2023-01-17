@@ -10,7 +10,7 @@
 
 ## Forum
 
-This project is part of the [UNICEF Innovation Fund Discourse community](https://unicef-if.discourse.group/c/projects/rentadrone/10). You can post comments or questions about each category of [Rentadrone Developers](https://rentadrone.cl/developers/) algorithms. We encourage users to participate in the forum and to engage with fellow users.
+This project is part of the [UNICEF Innovation Fund Discourse community](https://unicef-if.discourse.group/c/projects/rentadrone/10). You can post comments or questions about each category of [Rentadrone Developers](https://rentadronecl.github.io) algorithms. We encourage users to participate in the forum and to engage with fellow users.
 
 ## Summary
 
