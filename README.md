@@ -6,7 +6,7 @@
 [![Open Source Helpers](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector/badges/users.svg)](https://www.codetriage.com/rentadronecl/photovoltaic_fault_detector)
 [![Coverage Status](https://coveralls.io/repos/github/RentadroneCL/Photovoltaic_Fault_Detector/badge.svg)](https://coveralls.io/github/RentadroneCL/Photovoltaic_Fault_Detector)
 
-[Rentadrone.cl](https://rentadronecl.github.io)
+[SimpleMap.io](https://simplemap.io/)
 
 ## Forum
 
